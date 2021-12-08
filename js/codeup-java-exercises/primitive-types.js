@@ -20,3 +20,23 @@ console.log(value6 + ' is a ' + typeof value6);
 
 var value7 = '"true"';
 console.log(value7 + ' is a ' + typeof value7);
+
+// What data type would be represent:
+
+// A term or phrase typed into a search box?
+    // string
+
+// If a user is logged in?
+    // boolean
+
+// A discount applied to a user's shopping cart?
+    // number
+
+// Whether a coupon is valid or not?
+    // boolean
+
+// An email address typed into a registration form?
+    // string
+
+// The price of a product?
+    // number
