@@ -21,7 +21,7 @@ console.log(value6 + ' is a ' + typeof value6);
 var value7 = '"true"';
 console.log(value7 + ' is a ' + typeof value7);
 
-// What data type would be represent:
+// What data type would best represent:
 
 // A term or phrase typed into a search box?
     // string
