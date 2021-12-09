@@ -38,32 +38,33 @@ console.log(price.toFixed(2)); // ----> error
 
 console.log(isNaN(0));
 // false
-isNaN(1)
+console.log(isNaN(1));
 // false
-isNaN("")
+console.log(isNaN(""));
+// true ----> why is an empty string a number? is it bc it's undefined?
+console.log(isNaN("string"));
 // true
-isNaN("string")
-// true
-isNaN("0")
+console.log(isNaN("0"));
 // false
-isNaN("1")
+console.log(isNaN("1"));
 // false
-isNaN("3.145")
+console.log(isNaN("3.145"));
 // false
-isNaN(Number.MAX_VALUE)
+console.log(isNaN(Number.MAX_VALUE));
 // false
-isNaN(Infinity)
+console.log(isNaN(Infinity));
 // false
-isNaN("true")
-// true
-isNaN(true)
-// true
-isNaN("false")
-// true
-isNaN(false)
+console.log(isNaN("true"));
+// true ----> false. why?
+console.log(isNaN(true));
+// true ----> false. why?
+console.log(isNaN("false"));
+// true ----> false. why?
+console.log(isNaN(false));
 // true
 // to illustrate why the isNaN() function is needed:
-NaN == NaN
+console.log(NaN == NaN);
+// so, NaN does not have the same value as NaN, why?
 
 
 
