@@ -36,7 +36,7 @@ console.log(price.toFixed(2)); // ----> error
 // price is a string object and toFixed() is a method that is only a property of numbers*/
 
 
-console.log(isNaN(0));
+/*console.log(isNaN(0));
 // false
 console.log(isNaN(1));
 // false
@@ -64,9 +64,57 @@ console.log(isNaN(false));
 // true
 // to illustrate why the isNaN() function is needed:
 console.log(NaN == NaN);
-// so, NaN does not have the same value as NaN, why?
+// so, NaN does not have the same value as NaN, why?*/
 
 
+console.log(!true); // ----> false
+
+console.log(!false); // ----> true
+
+console.log(!!true); // ----> true
+
+console.log(!!false); // ----> false
+
+console.log(!!0); // ----> 0
+// missed it. why?
+console.log(!!-0); // ----> -0
+// missed it. why?
+console.log(!!1); // ----> 1
+// missed it. why?
+console.log(!!-1); // ----> -1
+// missed it. why?
+console.log(!!0.1); // ----> 0.1
+// missed it. why?
+console.log(!!"hello"); // ----> hello
+// missed it. why?
+console.log(!!""); // ----> undefined
+// missed it. why?
+console.log(!!''); // ----> undefined
+// missed it. why?
+console.log(!!"false"); // ----> "false"
+// missed it. why?
+console.log(!!"0"); // ----> "0"
+// missed it. why?
+
+// Execute the following statement in the Chrome JavaScript console and then follow the directions below.
+
+var sample = "Hello Codeup";
+//Use .length to find the number of characters in the string.
+console.log(sample.length);
+// Try to make the sample string all upper or all lower case.
+console.log(sample.toLowerCase());
+//Update the variable sample via concatenation so that it contains "Hello Codeup Students".
+sample = sample + " Students";
+console.log(sample);
+//Replace "Students" with "Class".
+console.log(sample.replace("Students", "Class"));
+//Find the index of "c" using .indexOf(). What do you observe?
+console.log(sample.indexOf("c"));
+//Find the index of "C" using .indexOf().
+console.log(sample.indexOf("C"));
+//Retrieve a substring that contains only the word "Codeup" by using indexOf() and substring().
+console.log(sample.substring(6, 12));
+// need help with this one
 
 
 
