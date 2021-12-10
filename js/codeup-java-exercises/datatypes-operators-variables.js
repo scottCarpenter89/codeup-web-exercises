@@ -36,7 +36,7 @@ console.log(price.toFixed(2)); // ----> error
 // price is a string object and toFixed() is a method that is only a property of numbers*/
 
 
-/*console.log(isNaN(0));
+console.log(isNaN(0));
 // false
 console.log(isNaN(1));
 // false
@@ -64,7 +64,7 @@ console.log(isNaN(false));
 // true
 // to illustrate why the isNaN() function is needed:
 console.log(NaN == NaN);
-// so, NaN does not have the same value as NaN, why?*/
+// so, NaN does not have the same value as NaN, why?
 
 
 console.log(!true); // ----> false
@@ -113,8 +113,9 @@ console.log(sample.indexOf("c"));
 //Find the index of "C" using .indexOf().
 console.log(sample.indexOf("C"));
 //Retrieve a substring that contains only the word "Codeup" by using indexOf() and substring().
-console.log(sample.substring(6, 12));
+console.log(sample.substring(sample.indexOf('C'), sample.indexOf('S')));
 // need help with this one
+    // update: might meet the problem parameters now?
 
 
 /*
@@ -153,13 +154,13 @@ console.log(payday);
 /*A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with
 her current schedule.*/
 
-let scheduleFull = false;
-let doClassesConflict = false;
+let scheduleNotFull = true;
+let noClassConflicts = true;
 
-if(scheduleFull && doClassesConflict){
-    console.log('The student cannot enroll for anymore classes.');
+if(scheduleNotFull && noClassConflicts){
+    console.log('The student can enroll in another class.');
 } else {
-    console.log('THe student can enroll in another class.');
+    console.log('The student cannot enroll for anymore classes.');
 }
 
 /*A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium
@@ -174,4 +175,33 @@ if((numPurchases > minimumPurchase && isOfferValid) || isPremiumMember){
     console.log('This purchase qualifies for the offer.');
 } else{
     console.log('This purchase does not qualify for the offer.');
+}
+
+// Use the following code to follow the instructions below:
+
+var username = 'codeup';
+var password = 'notastrongpassword';
+
+// the password must be at least 5 characters
+let charMin = 5;
+// the password must not include the username
+let reusedUsername = password.indexOf(username) === -1;
+// the username must be no more than 20 characters
+let charMax = 20;
+// neither the username or password can start or end with whitespace
+let noUsernameSpace = username.indexOf(' ') === -1;
+// console.log(noUsernameSpace);
+let noPasswordSpace = username.indexOf(' ') === -1;
+// console.log(noPasswordSpace);
+
+if (password.length >= charMin && password.length <= charMax && noUsernameSpace && reusedUsername){
+    console.log('Valid password');
+} else{
+    console.log('Invalid password');
+}
+
+if (noUsernameSpace){
+    console.log('Valid username');
+} else{
+    console.log('Invalid username');
 }
