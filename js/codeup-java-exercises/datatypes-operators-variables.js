@@ -96,7 +96,7 @@ console.log(!!"false"); // ----> "false"
 console.log(!!"0"); // ----> "0"
 // missed it. why?
 
-// Execute the following statement in the Chrome JavaScript console and then follow the directions below.
+// 2. Execute the following statement in the Chrome JavaScript console and then follow the directions below.
 
 var sample = "Hello Codeup";
 //Use .length to find the number of characters in the string.
@@ -114,12 +114,12 @@ console.log(sample.indexOf("c"));
 console.log(sample.indexOf("C"));
 //Retrieve a substring that contains only the word "Codeup" by using indexOf() and substring().
 console.log(sample.substring(sample.indexOf('C'), sample.indexOf('S')));
+console.log(sample.indexOf("S"));
 // need help with this one
     // update: might meet the problem parameters now?
 
 
-/*
-Write some JavaScript code, that is, variables and operators, to describe the following scenarios. Do not worry about
+/* 3. Write some JavaScript code, that is, variables and operators, to describe the following scenarios. Do not worry about
 the real operations to get the values, the goal of these exercises is to understand how real world conditions can be
 represented with code.
 */
@@ -149,7 +149,7 @@ let amazonHours = 4;
 let facebookHours = 10;
 
 let payday = (google * googleHours) + (amazon * amazonHours) + (facebook * facebookHours);
-console.log(payday);
+console.log('The amount you can expected to make is $' + payday + ' dollars.');
 
 /*A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with
 her current schedule.*/
@@ -177,7 +177,7 @@ if((numPurchases > minimumPurchase && isOfferValid) || isPremiumMember){
     console.log('This purchase does not qualify for the offer.');
 }
 
-// Use the following code to follow the instructions below:
+// 4. Use the following code to follow the instructions below:
 
 var username = 'codeup';
 var password = 'notastrongpassword';
