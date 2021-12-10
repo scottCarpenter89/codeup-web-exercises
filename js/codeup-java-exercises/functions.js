@@ -8,7 +8,7 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
-
+alert('Sup');
 function sayHello(name){
     return 'Hello, ' + name + '!';
 }
