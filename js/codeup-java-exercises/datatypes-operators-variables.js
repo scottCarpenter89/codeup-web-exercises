@@ -113,7 +113,7 @@ console.log(sample.indexOf("c"));
 //Find the index of "C" using .indexOf().
 console.log(sample.indexOf("C"));
 //Retrieve a substring that contains only the word "Codeup" by using indexOf() and substring().
-console.log(sample.substring(sample.indexOf('C'), sample.indexOf('S')));
+console.log('The substring is as follows: ' + sample.substring(sample.indexOf('C'), sample.indexOf('S')));
 console.log(sample.indexOf("S"));
 // need help with this one
     // update: might meet the problem parameters now?
@@ -128,12 +128,12 @@ represented with code.
  and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is $3, how much will
   you have to pay?*/
 
-let littleMermaid = 3;
-let brotherBear = 5;
-let hercules = 1;
+let littleMermaidRental = 3;
+let brotherBearRental = 5;
+let herculesRental = 1;
 let dailyRentalPrice = 3;
 
-let estimatedTotal = (littleMermaid * dailyRentalPrice) + (brotherBear * dailyRentalPrice) + (hercules * dailyRentalPrice);
+let estimatedTotal = (littleMermaidRental * dailyRentalPrice) + (brotherBearRental * dailyRentalPrice) + (herculesRental * dailyRentalPrice);
 console.log('You can expected to pay about $' + estimatedTotal + ' dollars.');
 
 /*Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a different rate
@@ -190,13 +190,14 @@ let reusedUsername = password.indexOf(username) === -1;
 let charMax = 20;
 // neither the username or password can start or end with whitespace
 let noUsernameSpace = username.indexOf(' ') === -1;
+log
 // console.log(noUsernameSpace);
 let noPasswordSpace = username.indexOf(' ') === -1;
 // console.log(noPasswordSpace);
 
-if (password.length >= charMin && password.length <= charMax && noUsernameSpace && reusedUsername){
+if (password.length >= charMin && password.length <= charMax && noPasswordSpace && reusedUsername){
     console.log('Valid password');
-} else{
+} else {
     console.log('Invalid password');
 }
 
