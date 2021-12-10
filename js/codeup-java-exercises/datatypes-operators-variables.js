@@ -152,3 +152,26 @@ console.log(payday);
 
 /*A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with
 her current schedule.*/
+
+let scheduleFull = false;
+let doClassesConflict = false;
+
+if(scheduleFull && doClassesConflict){
+    console.log('The student cannot enroll for anymore classes.');
+} else {
+    console.log('THe student can enroll in another class.');
+}
+
+/*A product offer can be applied only if a person buys more than 2 items, and the offer has not expired. Premium
+members do not need to buy a specific amount of products.*/
+
+let numPurchases = 3;
+let minimumPurchase = 2;
+let isOfferValid = true;
+let isPremiumMember = true;
+
+if((numPurchases > minimumPurchase && isOfferValid) || isPremiumMember){
+    console.log('This purchase qualifies for the offer.');
+} else{
+    console.log('This purchase does not qualify for the offer.');
+}
