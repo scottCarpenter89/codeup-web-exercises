@@ -37,7 +37,7 @@ console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+let random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -94,7 +94,7 @@ console.log('You should leave a $' + calculateTip(.20, 52.21) + ' tip.');
 let billAmount = prompt('How much was the bill for dinner?');
 let desiredTip = prompt('What percentage tip do you want to leave?');
 
-alert('You should leave a $' + (calculateTip(billAmount, desiredTip) + 'tip.'));
+alert('You should leave a $' + (calculateTip(parseInt(billAmount), parseFloat(desiredTip) / 100) + ' tip.'));
 
 /**
  * TODO:
@@ -110,3 +110,13 @@ alert('You should leave a $' + (calculateTip(billAmount, desiredTip) + 'tip.'));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+let itemPrice = 59.99;
+let itemDiscount = .40;
+
+
+function applyDiscount(price, discount){
+    let discountedTotal = (price - (price * discount)).toFixed(2);
+    return discountedTotal;
+}
+
+console.log('You total after your discount is $' + applyDiscount(itemPrice, itemDiscount));
