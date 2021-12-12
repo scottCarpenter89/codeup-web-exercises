@@ -23,6 +23,7 @@
  */
 
 
+/*
 function analyzeColor(input) {
 
 
@@ -47,6 +48,7 @@ function analyzeColor(input) {
         console.log('What\'s that?');
     }
 }
+*/
 
 console.log(analyzeColor('green'));
 console.log(analyzeColor('red'));
@@ -73,7 +75,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-
+function randomColor(input){
+    switch (input){
+        case 'red':
+            console.log('Sunday, bloody Sunday!');
+            break;
+        case 'green':
+            console.log('Green is my favorite color!');
+            break;
+        case 'yellow':
+            console.log('Don\'t eat yellow snow, trust me');
+            break;
+        case 'blue':
+            console.log('')
+    }
+}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
