@@ -22,23 +22,40 @@
  * console.logging the function's return value
  */
 
+
 function analyzeColor(input) {
-    if (input === 'blue') {
-        console.log('Blue is the color of smurfs')
-    } else if (input === 'green') {
-        console.log('Did you know the sun emits more green light than any other color?')
+
+
+    if (input === 'green') {
+        console.log('Did you know the sun emits more green light than any other color?');
     } else if (input === 'red'){
-        console.log('Sunday, bloody Sunday!')
+        console.log('Sunday, bloody Sunday!');
     } else if (input === 'orange'){
         console.log('It\'s kind of weird that orange is both a color and an object. Thanks english...');
     } else if (input === 'yellow'){
         console.log('I love yellow snow!')
     } else if (input === 'purple'){
-        console.log('Purple haze all in my brain! Lately things just don\'t seem the same!');
+        console.log('Purple haze all in my brain! Lately things just don\'t seem the same! Actin\' funny and I don\'t know why!' +
+              ' \'Scuze me while I kiss the sky!');
+    } else if (input === 'blue') {
+        console.log('Smurfs are blue.')
+    } else if(input === 'violent') {
+        console.log('Violence? Look, I don\'t want any trouble buddy');
+    } else if(input === 'indigo'){
+        console.log('Indigo? Sounds like Windigo!');
     } else {
-        console.log(input + '? Never heard of it.');
+        console.log('What\'s that?');
     }
 }
+
+console.log(analyzeColor('green'));
+console.log(analyzeColor('red'));
+console.log(analyzeColor('orange'));
+console.log(analyzeColor('purple'));
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('yellow'))
+console.log(analyzeColor(randomColor));
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
