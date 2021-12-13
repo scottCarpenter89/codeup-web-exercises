@@ -58,11 +58,7 @@ let random = Math.floor((Math.random() * 3) + 1);
  */
 
 function isTwo(num){
-    if(num === 2){
-        return true;
-    } else{
-        return false;
-    }
+   return num === 2;
 }
 
 console.log(isTwo(random));
