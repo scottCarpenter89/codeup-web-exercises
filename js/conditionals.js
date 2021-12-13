@@ -109,12 +109,14 @@ function colorSwitch(input){
     }
 }
 
+/*
 console.log(colorSwitch('red'));
 console.log(colorSwitch('green'));
 console.log(colorSwitch('yellow'));
 console.log(colorSwitch('blue'));
 console.log(colorSwitch('violet'));
 console.log(colorSwitch('indigo'));
+*/
 
 /**
  * TODO:
@@ -123,8 +125,8 @@ console.log(colorSwitch('indigo'));
  * function to show it to the user.
  */
 
-let colorDialog = prompt('Hey, what\'s your favorite color?');
-analyzeColor(colorDialog);
+/*let colorDialog = prompt('Hey, what\'s your favorite color?');
+analyzeColor(colorDialog);*/
 
 
 /* ########################################################################## */
@@ -148,6 +150,48 @@ analyzeColor(colorDialog);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+function calculateTotal(luckyNum, price){
+    switch(luckyNum) {
+        case 1:
+            return 'Congratulations! You were choosen for our exclusive discount offer! You will get 10% off your' +
+                ' purchase order, bringing your total down to $' + (price - (price * .1)) + '!';
+            break;
+        case 2:
+            return 'Congratulations! You were choosen for our exclusive discount offer! You will get 25% off your' +
+                ' purchase order, bringing your total down to $' + (price - (price * .25)) + '!';
+            break;
+        case 3:
+            return 'Congratulations! You were choosen for our exclusive discount offer! You will get 35% off your' +
+                ' purchase order, bringing your total down to $' + (price - (price * .35)) + '!';
+            break;
+        case 4:
+            return 'Congratulations! You were choosen for our exclusive discount offer! You will get 50% off your' +
+                ' purchase order, bringing your total down to $' + (price - (price * .5)) + '!';
+            break;
+        case 5:
+            return 'Congratulations!!! You are our lucky customer! Our random coupon generator has selected your ' +
+                'purchase to be completely free!';
+            break;
+        default:
+            return 'We\'re sorry, but your purchase did not qualify for an exclusive offer at this time. Thank you ' +
+                'for shopping with us!';
+            break;
+    }
+
+}
+
+
+function getRandomInt(max){
+    return Math.floor(Math.random() * 6);
+}
+
+console.log(calculateTotal(getRandomInt(6), 100));
+console.log(calculateTotal(getRandomInt(6), 100));
+console.log(calculateTotal(getRandomInt(6), 100));
+console.log(calculateTotal(getRandomInt(6), 100));
+console.log(calculateTotal(getRandomInt(6), 100));
+console.log(calculateTotal(getRandomInt(6), 100));
 
 /**
  * TODO:
@@ -178,3 +222,47 @@ analyzeColor(colorDialog);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+// write a function called numIdentifier(number)
+
+    // write a switch to evaluate even or odd numbers
+
+    // write a variable that adds the number with 100
+
+    // evaluate whether the number is 1/-1/0 with Math.sign in a variable
+
+    // if the variable is 1
+
+        // then alert a positive statement
+
+    // if the variable is -1
+
+        // then alert a negative statement
+
+// write a function called isInputNaN(userInput)
+function isInputNaN(userInput) {
+    // if it is NaN
+    if (isNaN(userInput)) {
+        // then it will alert the user their input is an incorrect data type
+        alert('Invalid ')
+    }
+    // if the argument is a number
+
+    // then it will send the user input to numIdentifier
+
+
+}
+
+// write a function that asks you whether you want to enter a number
+function letsPlay(userInput){
+    if (userInput === true){
+       return isInputNaN(prompt('Okay what number would you like me to evaluate?'));
+    } else {
+        alert('Maybe some other time then.');
+    }
+}
+// write a variable assigned to confirm asking the user if they want to input a number
+let pickANum = confirm('Hi, would you like for me to evaluate a number?');
+letsPlay(pickANum);
+// funnel their input into isInputNaN with a prompt
+isInputNaN(pickANum);
