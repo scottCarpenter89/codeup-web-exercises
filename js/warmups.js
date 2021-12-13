@@ -12,7 +12,7 @@ I have $3000 on-hand with a 720 credit score. I do not get a loan.
 I have $9000 on-hand with a 590 credit score. I do not get a loan.
 */
 
-let minCredit = 680;
+/*let minCredit = 680;
 let minCash = 4000;
 let cashIsKing = 10000;
 
@@ -23,4 +23,20 @@ if ((creditScore >= minCredit && cashOnHand >= minCash) || cashOnHand >= cashIsK
     console.log('Your loan has been approved!');
 } else {
     console.log('We\'re sorry, we cannot approve your loan at this time.');
+}*/
+
+function isFive(number){
+    if (number === 5){
+        return true;
+    } else if (number === '5') {
+        parseInt(number);
+        return true;
+    } else {
+        return false;
+    }
 }
+
+console.log(isFive(5));
+console.log(isFive(0));
+console.log(isFive('5'));
+console.log(isFive(20));
