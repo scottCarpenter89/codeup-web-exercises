@@ -23,8 +23,8 @@ console.log(sayHello('codeup'));
  * console.log 'helloMessage' to check your work
  */
 
-let helloMessage = sayHello('Scott');
-console.log(helloMessage);
+let helloMessage = 'Scott';
+console.log(sayHello(helloMessage));
 
 /**
  * TODO:
@@ -76,7 +76,7 @@ console.log(isTwo(random));
  */
 
 function calculateTip(tipPercent, total){
-    return tipPercent * total;
+    return (tipPercent * total).toFixed(2);
 }
 
 console.log('You should leave a $' + calculateTip(.20, 52.21) + ' tip.');
