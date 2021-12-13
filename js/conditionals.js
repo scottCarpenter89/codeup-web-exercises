@@ -23,40 +23,50 @@
  */
 
 
-/*
+
 function analyzeColor(input) {
 
 
     if (input === 'green') {
-        console.log('Did you know the sun emits more green light than any other color?');
+       // console.log('Did you know the sun emits more green light than any other color?');
+        alert('Did you know the sun emits more green light than any other color?');
     } else if (input === 'red'){
-        console.log('Sunday, bloody Sunday!');
+       // console.log('Sunday, bloody Sunday!');
+        alert('Sunday, bloody Sunday!');
     } else if (input === 'orange'){
-        console.log('It\'s kind of weird that orange is both a color and an object. Thanks english...');
+       // console.log('It\'s kind of weird that orange is both a color and an object. Thanks english...');
+        alert('It\'s kind of weird that orange is both a color and an object. Thanks english...');
     } else if (input === 'yellow'){
-        console.log('I love yellow snow!')
+       // console.log('I love yellow snow!');
+        alert('I love yellow snow!');
     } else if (input === 'purple'){
-        console.log('Purple haze all in my brain! Lately things just don\'t seem the same! Actin\' funny and I don\'t know why!' +
-              ' \'Scuze me while I kiss the sky!');
+       // console.log('Purple haze all in my brain! Lately things just don\'t seem the same! Actin\' funny and I don\'t know why!' +
+             // ' \'Scuze me while I kiss the sky!');
+        alert('Purple haze all in my brain! Lately things just don\'t seem the same! Actin\' funny and I don\'t know why!' +
+            ' \'Scuze me while I kiss the sky!');
     } else if (input === 'blue') {
-        console.log('Smurfs are blue.')
+       // console.log('Smurfs are blue.');
+        alert('Smurfs are blue.');
     } else if(input === 'violent') {
-        console.log('Violence? Look, I don\'t want any trouble buddy');
+       // console.log('Violence? Look, I don\'t want any trouble buddy');
+        alert('Violence? Look, I don\'t want any trouble buddy');
     } else if(input === 'indigo'){
-        console.log('Indigo? Sounds like Windigo!');
+       // console.log('Indigo? Sounds like Windigo!');
+        alert('Indigo? Sounds like Windigo!');
     } else {
-        console.log('What\'s that?');
+       // console.log('What\'s that?');
+        alert('What\'s that?');
     }
 }
-*/
 
-console.log(analyzeColor('green'));
+
+/*console.log(analyzeColor('green'));
 console.log(analyzeColor('red'));
 console.log(analyzeColor('orange'));
 console.log(analyzeColor('purple'));
 console.log(analyzeColor('blue'));
 console.log(analyzeColor('yellow'))
-console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));*/
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -75,7 +85,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function randomColor(input){
+function colorSwitch(input){
     switch (input){
         case 'red':
             console.log('Sunday, bloody Sunday!');
@@ -87,15 +97,35 @@ function randomColor(input){
             console.log('Don\'t eat yellow snow, trust me');
             break;
         case 'blue':
-            console.log('')
+            console.log('I love the blues');
+            break;
+        case 'violet':
+            console.log('Violet, why not just purple?');
+            break;
+        default:
+            console.log('I don\'t know that color');
+            break;
+
     }
 }
+
+console.log(colorSwitch('red'));
+console.log(colorSwitch('green'));
+console.log(colorSwitch('yellow'));
+console.log(colorSwitch('blue'));
+console.log(colorSwitch('violet'));
+console.log(colorSwitch('indigo'));
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+let colorDialog = prompt('Hey, what\'s your favorite color?');
+analyzeColor(colorDialog);
+
 
 /* ########################################################################## */
 
