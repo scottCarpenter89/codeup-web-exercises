@@ -224,33 +224,41 @@ console.log(calculateTotal(getRandomInt(6), 100));
  */
 
 // write a function called numIdentifier(number)
-
-    // write a switch to evaluate even or odd numbers
-
+function numIdentifier(number){
+    // write a conditional to evaluate even or odd numbers
+    if (number % 2 === 0){
+        alert('Your number is even!');
+    } else {
+        alert('Your number is odd!');
+    }
     // write a variable that adds the number with 100
-
+    let addHundred = number + 100;
+    alert('Your number plus 100 is : ' + addHundred);
     // evaluate whether the number is 1/-1/0 with Math.sign in a variable
-
+    let negNumber = -Math.abs(1);
     // if the variable is 1
-
+    if (Math.sign(number) === 1){
         // then alert a positive statement
-
+        alert('Your number is positive!');
     // if the variable is -1
-
+    } else if (Math.sign(number) === negNumber){
         // then alert a negative statement
-
+        alert('Your number is negative!');
+    }
+}
 // write a function called isInputNaN(userInput)
 function isInputNaN(userInput) {
     // if it is NaN
-    if (isNaN(userInput)) {
+    userInput = parseInt(userInput);
+    if (!isNaN(userInput)) {
         // then it will alert the user their input is an incorrect data type
-        alert('Invalid ')
+        return numIdentifier(userInput);
+        // if the argument is a number
+    } else {
+        // then it will send the user input to numIdentifier
+        alert('Invalid data type. Please enter a number.');
+        // Why does this loop at the end of the script every time?
     }
-    // if the argument is a number
-
-    // then it will send the user input to numIdentifier
-
-
 }
 
 // write a function that asks you whether you want to enter a number
