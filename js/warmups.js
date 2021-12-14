@@ -25,6 +25,7 @@ if ((creditScore >= minCredit && cashOnHand >= minCash) || cashOnHand >= cashIsK
     console.log('We\'re sorry, we cannot approve your loan at this time.');
 }*/
 
+// 12/13/2021
 function isFive(number){
     if (number === 5){
         return true;
@@ -40,3 +41,16 @@ console.log(isFive(5));
 console.log(isFive(0));
 console.log(isFive('5'));
 console.log(isFive(20));
+
+
+// 12/14/2021
+
+function isMultipleOfThree(input){
+    let includeStrings = parseInt(input);
+    return includeStrings % 3 === 0;
+}
+
+console.log('This is a multiple of three: ' + isMultipleOfThree(9));
+console.log('This is a multiple of three: ' + isMultipleOfThree('9'));
+console.log('This is a multiple of three: ' + isMultipleOfThree(10));
+console.log('This is a multiple of three: ' + isMultipleOfThree(null));
