@@ -33,33 +33,31 @@
 
 function analyzeColor1(color){
     if (color === 'blue'){
-        console.log('blue is the color of the sky');
+        return 'blue is the color of the sky';
     } else if (color === 'red'){
-        console.log('red is the color of love');
+        return 'red is the color of love';
     } else if (color === 'green'){
-        console.log('green is the color of envy');
+        return 'green is the color of envy';
     } else {
-        console.log('I don\'t know that color');
+        return 'I don\'t know that color';
     }
 }
 
-console.log(analyzeColor1('blue'));
+/*console.log(analyzeColor1('blue'));
 console.log(analyzeColor1('red'));
 console.log(analyzeColor1('green'));
-console.log(analyzeColor1('burgundy'));
+console.log(analyzeColor1('burgundy'));*/
 
 function analyzeColor(input) {
-
-
     if (input === 'green') {
-       // console.log('Did you know the sun emits more green light than any other color?');
-        alert('Did you know the sun emits more green light than any other color?');
+       return 'Did you know the sun emits more green light than any other color?';
+        //alert('Did you know the sun emits more green light than any other color?');
     } else if (input === 'red'){
-       // console.log('Sunday, bloody Sunday!');
-        alert('Sunday, bloody Sunday!');
+       console.log('Sunday, bloody Sunday!');
+        //alert('Sunday, bloody Sunday!');
     } else if (input === 'orange'){
-       // console.log('It\'s kind of weird that orange is both a color and an object. Thanks english...');
-        alert('It\'s kind of weird that orange is both a color and an object. Thanks english...');
+       console.log('It\'s kind of weird that orange is both a color and an object. Thanks english...');
+        //alert('It\'s kind of weird that orange is both a color and an object. Thanks english...');
     } else if (input === 'yellow'){
        // console.log('I love yellow snow!');
         alert('I love yellow snow!');
@@ -84,13 +82,13 @@ function analyzeColor(input) {
 }
 
 
-/*console.log(analyzeColor('green'));
+console.log(analyzeColor('green'));
 console.log(analyzeColor('red'));
 console.log(analyzeColor('orange'));
-console.log(analyzeColor('purple'));
-console.log(analyzeColor('blue'));
-console.log(analyzeColor('yellow'))
-console.log(analyzeColor(randomColor));*/
+// console.log(analyzeColor('purple'));
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('yellow'))
+// console.log(analyzeColor(randomColor));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -207,15 +205,15 @@ function calculateTotal(luckyNum, price){
 
 
 function getRandomInt(max){
-    return Math.floor(Math.random() * 6);
+    return Math.floor((Math.random() * 6) + 1);
 }
 
-/*console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));*/
+// console.log(calculateTotal(getRandomInt(6), 100));
+// console.log(calculateTotal(getRandomInt(6), 100));
+// console.log(calculateTotal(getRandomInt(6), 100));
+// console.log(calculateTotal(getRandomInt(6), 100));
+// console.log(calculateTotal(getRandomInt(6), 100));
+// console.log(calculateTotal(getRandomInt(6), 100));
 
 /**
  * TODO:
@@ -297,4 +295,4 @@ function letsPlay(userInput){
 let pickANum = confirm('Hi, would you like for me to evaluate a number?');
 letsPlay(pickANum);
 // funnel their input into isInputNaN with a prompt
-isInputNaN(pickANum);
+// isInputNaN(pickANum);
