@@ -116,3 +116,20 @@ console.log('N is a multiple of the target: ' + isMultipleOf(14,3));
 console.log('N is a multiple of the target: ' + isMultipleOf('30', '5'));
 console.log('N is a multiple of the target: ' + isMultipleOf('17', '5'));
 
+// Make a function named isTrue(boolean)
+function isTrue(boolean){
+    boolean = true;
+    return boolean;
+}
+
+console.log('Wait, so you\'re telling me that false is: ' + isTrue(false));
+console.log('Wait, so you\'re telling me that ghost monkeys are real?: ' + isTrue('ghost monkeys'));
+console.log('Wait, so you\'re telling me that [sticky, rainbow, kitty, bombs] is a thing?: ' + isTrue(['sticky', 'rainbow', 'kitty', 'bombs']));
+
+// Make a function named isFalse(boolean)
+function isFalse(boolean){
+    boolean = false;
+    return boolean;
+}
+
+console.log('So, now you\'re saying that true is: ' + isFalse(true);
