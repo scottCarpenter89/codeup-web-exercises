@@ -21,8 +21,32 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+// Exercise 1
+    // Create a function called analyzeColor1 that takes a parameter called color
+//In your function, use ONLY if statements to print the following:
+    //“blue is the color of the sky” if the value of color is “blue”
+    //“red is the color of love” if the value of color is “red”
+    //“green is the color of envy” if the value of color is “green”
+    //“I don’t know that color” if the value of color is anything else
+    //HINT: use return in the conditional code blocks to prevent from printing multiple times for the same argument
+    //Add, commit, and push to GitHub.
 
+function analyzeColor1(color){
+    if (color === 'blue'){
+        console.log('blue is the color of the sky');
+    } else if (color === 'red'){
+        console.log('red is the color of love');
+    } else if (color === 'green'){
+        console.log('green is the color of envy');
+    } else {
+        console.log('I don\'t know that color');
+    }
+}
 
+console.log(analyzeColor1('blue'));
+console.log(analyzeColor1('red'));
+console.log(analyzeColor1('green'));
+console.log(analyzeColor1('burgundy'));
 
 function analyzeColor(input) {
 
@@ -186,12 +210,12 @@ function getRandomInt(max){
     return Math.floor(Math.random() * 6);
 }
 
+/*console.log(calculateTotal(getRandomInt(6), 100));
 console.log(calculateTotal(getRandomInt(6), 100));
 console.log(calculateTotal(getRandomInt(6), 100));
 console.log(calculateTotal(getRandomInt(6), 100));
 console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));
-console.log(calculateTotal(getRandomInt(6), 100));
+console.log(calculateTotal(getRandomInt(6), 100));*/
 
 /**
  * TODO:
