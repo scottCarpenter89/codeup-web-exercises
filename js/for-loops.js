@@ -35,3 +35,11 @@ function randomNumberGenerator() {
 }
 
 randomNumberGenerator();
+
+// 4. Create a for loop that uses console.log to create the output shown below.
+
+function numberPrinter(){
+    // needs to log
+};
+
+numberPrinter();
