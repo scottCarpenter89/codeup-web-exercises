@@ -28,3 +28,31 @@
 // }
 //
 // altEvenCounter();
+
+// Write the code necessary to output the first 50 prime numbers
+// Recommend starting your loop at 1 and ending your loop once you've calculated 50 prime numbers.
+// https://en.wikipedia.org/wiki/Prime_number
+
+function primeNumberGenerator() {
+    // // a prime number is only divisible by itself and one
+    // create a counter and set to one
+    let counter = 1;
+    // while the counter is less than 50, do stuff
+    while (counter <= 50) {
+        // if the counter divisible by itself is equal to 1
+        if (counter % counter === 1) {
+            // log the number
+            console.log(counter);
+            // and add one to the counter
+            counter++;
+            // otherwise
+        } else {
+            // continue onto the next number
+            continue;
+        }
+    }
+}
+
+//primeNumberGenerator();
+
+console.log(14 / 14);
