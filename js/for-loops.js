@@ -22,7 +22,7 @@ console.log(showMultiplicationTable(4));
 
 function randomNumberGenerator() {
     // create a for loop that initiates at 20; runs until 200; and increments by 50
-    for (i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
         // let the return variable equal a whole integer of a random number times the multiplier
         let randomNumberProduct = Math.floor(Math.random() * 200);
         if (randomNumberProduct > 20 && randomNumberProduct % 2 === 0) {
@@ -30,7 +30,6 @@ function randomNumberGenerator() {
         } else if (randomNumberProduct > 20 && randomNumberProduct % 2 === 1) {
             console.log(randomNumberProduct + ' is odd.');
         } else {
-            continue;
         }
     }
 }
@@ -53,14 +52,14 @@ numberPrinter();
 
 // 5. Create a for loop that uses console.log to create the output shown below.
 
-function decrementer() {
+function decrements() {
 
     for (let i = 100; 0 < i; i -= 5) {
         console.log(i);
     }
 }
 
-decrementer();
+decrements();
 
 
 
