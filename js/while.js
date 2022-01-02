@@ -20,9 +20,14 @@
 // 32768
 // 65536
 
-let exponent = 1;
-let maxNumber = 65536
-while ( < 65537){
-    console.log(2 ** exponent);
-    exponent++;
+
+function baseTwo(){
+    // need to create an expression that raises to two to a power and then adds one to the power
+    let power = 1;
+    while (2 ** power <= 65536){
+        console.log(2 ** power);
+        power++;
+    }
 }
+
+baseTwo();
