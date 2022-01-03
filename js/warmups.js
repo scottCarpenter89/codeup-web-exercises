@@ -37,10 +37,10 @@ function isFive(number){
     }
 }
 
-console.log(isFive(5));
-console.log(isFive(0));
-console.log(isFive('5'));
-console.log(isFive(20));
+// console.log(isFive(5));
+// console.log(isFive(0));
+// console.log(isFive('5'));
+// console.log(isFive(20));
 
 
 // 12/14/2021
@@ -50,7 +50,34 @@ function isMultipleOfThree(input){
     return includeStrings % 3 === 0;
 }
 
-console.log('This is a multiple of three: ' + isMultipleOfThree(9));
-console.log('This is a multiple of three: ' + isMultipleOfThree('9'));
-console.log('This is a multiple of three: ' + isMultipleOfThree(10));
-console.log('This is a multiple of three: ' + isMultipleOfThree(null));
+// console.log('This is a multiple of three: ' + isMultipleOfThree(9));
+// console.log('This is a multiple of three: ' + isMultipleOfThree('9'));
+// console.log('This is a multiple of three: ' + isMultipleOfThree(10));
+// console.log('This is a multiple of three: ' + isMultipleOfThree(null));
+
+// Maths!
+// 1. Write a function called add(num1, num2) which returns the sum of a and b
+// 2. Write a function named square(numToSqr) which takes in a number (numToSqr) and returns the number multiplied by itself
+// 3. Write a function called sumOfSquares(a, b).
+//     a. You should find the square of a, then the square of b.
+//     b. Invoke add(num1, num2) and pass the new squared values in as arguments.
+
+function add(num1, num2){
+    return num1 + num2;
+}
+
+function square(numToSqr1, numToSqr2){
+    numToSqr1 = numToSqr1 * numToSqr1;
+    numToSqr2 = numToSqr2 * numToSqr2;
+    return sumOfSquares(numToSqr1, numToSqr2);
+}
+
+function sumOfSquares(a, b){
+    let squareA = a ** 2;
+    let squareB = b ** 2;
+    return add(squareA, squareB);
+}
+
+console.log(square(4, 3));
+console.log(square(7, 9));
+console.log(square(42, 57));
