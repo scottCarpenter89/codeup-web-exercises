@@ -1,3 +1,5 @@
+'use strict';
+
 /*Using the two provided variables, create a piece of logic which will determine if a person is qualified to be
 extended an auto loan.
 
@@ -66,18 +68,16 @@ function add(num1, num2){
     return num1 + num2;
 }
 
-function square(numToSqr1, numToSqr2){
-    numToSqr1 = numToSqr1 * numToSqr1;
-    numToSqr2 = numToSqr2 * numToSqr2;
-    return sumOfSquares(numToSqr1, numToSqr2);
+function square(numToSqr){
+    return numToSqr * numToSqr
 }
 
 function sumOfSquares(a, b){
-    let squareA = a ** 2;
-    let squareB = b ** 2;
-    return add(squareA, squareB);
+  let aSquared = square(a);
+  let bSquared = square(b);
+  return add(aSquared, bSquared);
 }
 
-console.log(square(4, 3));
-console.log(square(7, 9));
-console.log(square(42, 57));
+console.log(sumOfSquares(5, 12));
+console.log(sumOfSquares(5, 5));
+console.log(sumOfSquares(7, 3));
