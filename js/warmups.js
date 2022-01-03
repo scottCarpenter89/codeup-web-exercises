@@ -152,21 +152,21 @@ function getPassword() {
 
 function getMeaningOfLife(meaningfulNum){
     let counter = 0;
-    if (isNaN(meaningfulNum)){
-         return console.log('Numbers have meanings friend. Search for real number as your question.');
-    }
-    while (counter !== meaningfulNum){
-        console.log('Continue you quest for your meaning.');
-        counter++;
+    meaningfulNum = parseInt(meaningfulNum);
+    if (meaningfulNum) {
+        while (counter !== meaningfulNum) {
+            counter++;
+        }
     }
     hitchHiker(meaningfulNum);
 }
 
 
-
 function hitchHiker(num){
     if (num === 42){
         console.log('Did you bring your towel?');
+    } else if (isNaN(num)) {
+        console.log('Numbers have meaning friend. Continue your quest.');
     } else {
         console.log('The meaning of life, the universe, and everything is ' + num + '.');
     }
