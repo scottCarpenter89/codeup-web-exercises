@@ -8,14 +8,14 @@ function showMultiplicationTable(number) {
     let counter = 1;
     // use a do while loop to multiply the count while it is less than or equal to ten
     do {
-        console.log(counter * number);
+        console.log(number + ' x ' + counter + ' = ' + (counter * number));
         counter++;
     } while (counter <= 10);
     // return the product of the input number times the counter
-
 }
 
-console.log(showMultiplicationTable(4));
+showMultiplicationTable(4);
+console.log('\n');
 
 // 3. Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output
 // to the console whether each number is odd or even. For example:
@@ -35,6 +35,7 @@ function randomNumberGenerator() {
 }
 
 randomNumberGenerator();
+console.log('\n');
 
 // 4. Create a for loop that uses console.log to create the output shown below.
 
@@ -49,11 +50,13 @@ function numberPrinter() {
 }
 
 numberPrinter();
+console.log('\n');
+
+
 
 // 5. Create a for loop that uses console.log to create the output shown below.
 
 function decrements() {
-
     for (let i = 100; 0 < i; i -= 5) {
         console.log(i);
     }
