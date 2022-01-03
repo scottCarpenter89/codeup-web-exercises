@@ -5,27 +5,31 @@
 // 3. Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
 
 
-function allOddsExcept(input){
+function allOddsExcept(input) {
+    //input = parseInt(input);
     console.log('Here is the number to skip: ' + input);
-
-        for (let i = 1; i < 50; i++){
-            if (i % 2 === 1 && i !== input){
-                console.log('Here is an odd number: ' + i);
-            } else if (i === input){
-                console.log('Yikes! Skipping number: ' + input);
-            } else {
-            }
+    for (let i = 1; i < 50; i++) {
+        if (i === input) {
+            console.log('Yikes! Skipping number: ' + input);
+            continue;
+        } else if (i % 2 === 1 && i !== input){
+            console.log('Here is an odd number: ' + i);
         }
-
-}
-
-function isValidInput(input){
-    if (input > 1 && input < 50){
-        return allOddsExcept(isValidInput());
-    } else {
-        prompt('Please enter a valid odd number between 1 and 50');
     }
 }
 
-let oneToFifty = prompt('Enter an odd number between 1 and 50');
-isValidInput(oneToFifty);
+function isValidInput(){
+    let input = prompt('Enter an odd number between 1 and 50');
+    input = parseInt(input);
+    let isOdd = input % 2 === 1;
+    let isInRange = (input >= 1 && input <= 50);
+    if (isOdd && isInRange){
+        return allOddsExcept(input);
+    } else {
+        let invalidEntry = prompt('Please enter a valid odd number between 1 and 50');
+        return allOddsExcept(invalidEntry);
+    }
+}
+
+
+isValidInput();
