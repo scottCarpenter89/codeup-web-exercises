@@ -61,6 +61,7 @@ function iceCreamSeller() {
         if (allCones > customerOrder) {
             allCones -= customerOrder;
             console.log(customerOrder + ' cones sold...');
+            console.log('There are ' + allCones + ' cones left...');
         } else if (allCones < customerOrder) {
             console.log('Cannot sell you ' + customerOrder + ' cones I only have ' + allCones + ' ...');
         } else {
