@@ -139,4 +139,35 @@ function getPassword() {
     }
 }
 
-getPassword();
+//getPassword();
+
+// getMeaningOfLife
+// 1. Write a function named getMeaningOfLife which accepts one parameter, meaningfulNum.
+    //     a. this function will use a while loop to compare its current number (a variable named counter) against the meaningfulNum.
+// 2. While the counter is not equivalent to the meaningfulNum, continue the loop.
+    //     a. Once that condition is broken, console log a string telling the user "The meaning of life, the universe, and everything is [your meaningful number]"
+// 3. Thinking about the above function, getMeaningOfLife, let’s ask a question: What happens if the value of meaningfulNum is a non-numeric?
+    //     a. Write some code to account for this case. How the function handles the situation is up to you!
+// 4. Let’s continue with getMeaningOfLife: If the value of meaningfulNum happens to be 42, console log a separate message at the end of the function to say: "Did you bring your towel?"
+
+function getMeaningOfLife(meaningfulNum){
+    let counter = 0;
+    if (isNaN(meaningfulNum)){
+        return console.log('Numbers have meaning friend. Try a real number friend');
+    } else {
+        parseInt(meaningfulNum);
+    }
+    while (counter !== meaningfulNum){
+        console.log('Continue you quest for your meaning.');
+        counter++;
+    }
+    if (meaningfulNum === 42){
+        console.log('Did you bring your towel?');
+    } else {
+        console.log('The meaning of life, the universe, and everything is ' + meaningfulNum + '.');
+    }
+}
+
+getMeaningOfLife('bananas');
+getMeaningOfLife(23);
+getMeaningOfLife(42);
