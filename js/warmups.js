@@ -78,6 +78,35 @@ function sumOfSquares(a, b){
   return add(aSquared, bSquared);
 }
 
-console.log(sumOfSquares(5, 12));
-console.log(sumOfSquares(5, 5));
-console.log(sumOfSquares(7, 3));
+// console.log(sumOfSquares(5, 12));
+// console.log(sumOfSquares(5, 5));
+// console.log(sumOfSquares(7, 3));
+
+// FIZZ-BUZZZZZZZ
+    // 1. Write a function named getFizzBuzz(startingNum) which performs the following actions:
+    // 2. If startingNum is divisible by 3
+        // a. console log "fizz"
+    // 3. Else, if startingNum is divisible by 5
+        // a. console log "buzz"
+    // 4. If startingNum is divisible by 3 AND divisible by 5
+        // a. return a string which says "FIZZ BUZZ"
+    // 5. Thinking about getFizzBuzz(startingNum), let's console log the return value of this function
+    // 6. What if getFizzBuzz doesn't return a value (VOID)?
+        // a. How do you want to handle that?
+
+function getFizzBuzz(startingNum){
+    if (startingNum % 3 === 0 && startingNum % 5 === 0){
+        return console.log('FIZZ BUZZ');
+    } else if (startingNum % 5 === 0){
+        console.log('fizz');
+    } else if (startingNum % 3 === 0){
+        console.log('buzz');
+    } else {
+        return console.log(undefined);
+    }
+}
+
+getFizzBuzz(9);
+getFizzBuzz(10);
+getFizzBuzz(15);
+getFizzBuzz();
