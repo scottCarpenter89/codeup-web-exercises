@@ -120,11 +120,23 @@ function getPassword() {
 // establish the password with a variable
     let validPassword = 'Delta89!_gra$$FED';
     let userPWInput = prompt('Please type in your password.');
-    while (userPWInput !== validPassword){
+    let attempts = 1;
+    // can also use do while and start attempts from 0 with initializing prompt inside the do{}
+        // let attempts = 0;
+        // do {
+            // prompt = ('Please enter your password');
+            // attempts++;
+        // } while (validPassword !== userPWInput && attempts < 3);
+    while (userPWInput !== validPassword && attempts < 3){
         alert('Your password is incorrect. Please enter the correct password.');
         userPWInput = prompt('Please retry your password.');
+        attempts++;
     }
-    alert('Your password is correct!');
+    if (attempts > 2){
+        alert('You are out of attempts. Please try again later.');
+    } else {
+        alert('Your password is correct!');
+    }
 }
 
 getPassword();
