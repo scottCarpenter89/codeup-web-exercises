@@ -106,7 +106,25 @@ function getFizzBuzz(startingNum){
     }
 }
 
-getFizzBuzz(9);
-getFizzBuzz(10);
-getFizzBuzz(15);
-getFizzBuzz();
+// getFizzBuzz(9);
+// getFizzBuzz(10);
+// getFizzBuzz(15);
+// getFizzBuzz();
+
+// getPaswordInput
+    // 1. Define a function named getPassword() which performs the following actions:
+    //     a. Using prompt(), alert(), variables, and a while-loop, ask the user to input their password until their entry matches your hard-coded password value.
+    //     HINT: start by defining the correct password and don't forget to link your html file
+
+function getPassword() {
+// establish the password with a variable
+    let validPassword = 'Delta89!_gra$$FED';
+    let userPWInput = prompt('Please type in your password.');
+    while (userPWInput !== validPassword){
+        alert('Your password is incorrect. Please enter the correct password.');
+        userPWInput = prompt('Please retry your password.');
+    }
+    alert('Your password is correct!');
+}
+
+getPassword();
