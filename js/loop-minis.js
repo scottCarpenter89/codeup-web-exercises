@@ -5,9 +5,9 @@
 //      -> accepts the number of times to iterate as a parameter
 //      -> only logs *if the iteration number is odd*
 
-function oddLoop(num) {
+function oddLoop(numIterations) {
     // for loop need to accept the function parameter as the condition
-    for (let i = 0; i <= num; i++) {
+    for (let i = 0; i <= numIterations; i++) {
         // if the index is odd it logs, otherwise it continues to the next iteration
         if (i % 2 === 1) {
             console.log(i);
@@ -23,9 +23,9 @@ function oddLoop(num) {
 //      -> logs "This is an even iteration" on the evens
 //      -> logs "This is an odd iteration" on the odds
 
-function evensAndOdds(num) {
+function evensAndOdds(numIterations) {
     // needs to accept the function parameter as the condition in the loop
-    for (let i = 1; i <= num; i++) {
+    for (let i = 1; i <= numIterations; i++) {
         // if the index is odd,
         if (i % 2 === 1) {
             // then it logs an odd statement
@@ -45,19 +45,19 @@ function evensAndOdds(num) {
 //      -> Once the user enters the correct password, use the 'break' keyword to end the loop
 //      -> After the loop concludes, alert the use they have entered the correct password
 
-function enterPassword(input){
+function enterPassword(passwordInput){
     // create a password variable
     let password = 'eat-em-up-kats';
     // create a variable that establishes permitted attempts
     let allowedAttempts = 3
     // for loop uses the attempt variable as its condition
-    for (let i = 0; i < input.length; i++) {
+    for (let i = 1; i < passwordInput.length; i++) {
         // if the input is not equal to the password
-        if (input !== password && i < allowedAttempts) {
+        if (passwordInput !== password && i < allowedAttempts) {
             // then it logs incorrect and continues
             console.log(`Incorrect password`);
             continue;
-        } else if (input !== password && i === allowedAttempts) {
+        } else if (passwordInput !== password && i === allowedAttempts) {
             console.log(`Too many attempts. Try again later.`);
             break;
         } else {
