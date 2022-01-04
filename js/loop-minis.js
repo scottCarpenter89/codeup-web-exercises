@@ -3,7 +3,7 @@
 // TODO: MINI EXERCISE
 //      Write a function which uses a for-loop and
 //      -> accepts the number of times to iterate as a parameter
-//      -> only logs *if the iteration number is odd*
+//      -> only logs *if the control variable is odd*
 
 function oddLoop(numIterations) {
     // for loop need to accept the function parameter as the condition
@@ -15,7 +15,8 @@ function oddLoop(numIterations) {
     }
 }
 
-// oddLoop(5);
+oddLoop(5);
+console.log(`\n`);
 
 // TODO: MINI EXERCISE
 //      Write a function which uses a for-loop and
@@ -36,7 +37,8 @@ function evensAndOdds(numIterations) {
     }
 }
 
-// evensAndOdds(10);
+evensAndOdds(10);
+console.log(`\n`);
 
 // TODO: MINI EXERCISE
 //      Make a new version of your getPassword function using a for-loop!
