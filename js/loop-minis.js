@@ -58,7 +58,6 @@ function enterPassword(passwordInput){
         if (passwordInput !== password && i < allowedAttempts) {
             // then it logs incorrect and continues
             console.log(`Incorrect password`);
-            continue;
         } else if (passwordInput !== password && i === allowedAttempts) {
             console.log(`Too many attempts. Try again later.`);
             break;
