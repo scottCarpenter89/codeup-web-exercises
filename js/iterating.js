@@ -64,6 +64,23 @@
      */
 
     function returnFirstElement(nameArray) {
+        let firstElement = nameArray.shift();
+        return firstElement;
 
     }
+
+    function returnSecondElement(nameArray) {
+        let secondElement = nameArray.slice(1,2);
+        return secondElement.toString();
+    }
+
+    function returnLastElement(nameArray) {
+        let lastElement = nameArray.pop();
+        return lastElement.toString();
+    }
+
+    console.log(returnFirstElement(names));
+    console.log(returnSecondElement(names));
+    console.log(returnLastElement(names));
+
 })();
