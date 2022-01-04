@@ -57,7 +57,7 @@ console.log('\n');
 // 5. Create a for loop that uses console.log to create the output shown below.
 
 function decrements() {
-    for (let i = 100; 0 < i; i -= 5) {
+    for (let i = 100; 0 < i; i-=5) {
         console.log(i);
     }
 }
