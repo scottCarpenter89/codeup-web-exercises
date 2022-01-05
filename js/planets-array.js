@@ -1,7 +1,7 @@
 (function(){
     "use strict";
 
-    let planets = [
+    var planets = [
         'Mercury',
         'Venus',
         'Earth',
@@ -18,68 +18,30 @@
      * the step that it describes
      */
 
-    function addSun(celestialBody) {
-        let copyOfSolarSystem = celestialBody.slice();
-        copyOfSolarSystem.unshift('Sun');
-        console.log(copyOfSolarSystem);
-    }
-
     console.log('Adding "The Sun" to the beginning of the planets array.');
-    addSun(planets);
-    console.log('\n');
-
-    function addPluto(celestialBody) {
-        let copyOfSolarSystem = celestialBody.slice();
-        copyOfSolarSystem.push('Pluto');
-        return copyOfSolarSystem;
-    }
+    planets.unshift('Sun');
+    console.log(planets);
 
     console.log('Adding "Pluto" to the end of the planets array.');
-    console.log(addPluto(planets));
-    console.log(`\n`);
-
-    function removeSun(celestialBody) {
-        celestialBody.shift();
-        return celestialBody;
-    }
+    planets.push('Pluto');
+    console.log(planets);
 
     console.log('Removing "The Sun" from the beginning of the planets array.');
-    console.log(removeSun(planets));
-    console.log(`\n`);
-
-    function removePluto(celestialBody) {
-        celestialBody.pop();
-        return celestialBody;
-    }
+    planets.shift();
+    console.log(planets);
 
     console.log('Removing "Pluto" from the end of the planets array.');
-    console.log(removePluto(planets));
-    console.log(`\n`);
-
-    function findEarth(celestialBody) {
-        let heresEarth = celestialBody.indexOf('Earth');
-        return `Earth is at the index of ${heresEarth} in the array`;
-    }
+    planets.pop();
+    console.log(planets);
 
     console.log('Finding and logging the index of "Earth" in the planets array.');
-    console.log(findEarth(planets));
-    console.log(`\n`);
-
-    function reverseSolarSystem(celestialBodies) {
-        celestialBodies.reverse();
-        return celestialBodies;
-    }
+    console.log(planets.indexOf('Earth'));
 
     console.log("Reversing the order of the planets array.");
-    console.log(reverseSolarSystem(planets));
-    console.log(`\n`);
+    planets.reverse();
+    console.log(planets);
 
-    function alphabeticalSolarSystem(celestialBodies) {
-        celestialBodies.sort();
-        return celestialBodies;
-    }
-
-    console.log(`Here are the planets sorted alphabetically:`);
-    console.log(alphabeticalSolarSystem(planets));
-
+    console.log("Sorting the planets array.");
+    planets.sort();
+    console.log(planets);
 })();
