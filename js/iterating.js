@@ -16,6 +16,7 @@
      * array.
      */
 
+    console.log('Here is the length of the array I created:');
     console.log(names.length);
     console.log(`\n`);
 
@@ -25,6 +26,7 @@
      * accessing each element's index.
      */
 
+    console.log(`Here are each names accessed from the array using console logs:`)
     console.log(names[0]);
     console.log(names[1]);
     console.log(names[2]);
@@ -37,6 +39,7 @@
      * array.
      */
 
+    console.log(`Here are the names using a for loop:`);
     for (let i = 0; i < names.length; i++) {
         console.log(names[i]);
     }
@@ -47,7 +50,12 @@
      * Refactor your above code to use a `forEach` loop
      */
 
-    names.forEach(function(name){});
+    console.log(`Here are the names using the forEach function:`);
+    names.forEach(function(name){
+        console.log(name);
+    });
+
+    console.log(`\n`);
 
     /**
      * TODO:
@@ -65,22 +73,24 @@
 
     function returnFirstElement(nameArray) {
         let firstElement = nameArray.shift();
-        return firstElement;
+        console.log(`Here is the first name in the array: ${firstElement}`);
 
     }
 
     function returnSecondElement(nameArray) {
         let secondElement = nameArray.slice(1,2);
-        return secondElement.toString();
+        console.log(`Here is the second name in the array: ${secondElement}`);
     }
 
     function returnLastElement(nameArray) {
         let lastElement = nameArray.pop();
-        return lastElement.toString();
+        console.log(`Here is the last name in the array: ${lastElement}`);
     }
 
-    console.log(returnFirstElement(names));
-    console.log(returnSecondElement(names));
-    console.log(returnLastElement(names));
+    returnFirstElement(names);
+    console.log(`\n`);
+    returnSecondElement(names);
+    console.log(`\n`);
+    returnLastElement(names);
 
 })();

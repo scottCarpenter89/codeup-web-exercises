@@ -19,17 +19,19 @@
      */
 
     function addSun(celestialBody) {
-        celestialBody.unshift('Sun');
-        return celestialBody;
+        let copyOfSolarSystem = celestialBody.slice();
+        copyOfSolarSystem.unshift('Sun');
+        console.log(copyOfSolarSystem);
     }
 
     console.log('Adding "The Sun" to the beginning of the planets array.');
-    console.log(addSun(planets));
+    addSun(planets);
     console.log('\n');
 
     function addPluto(celestialBody) {
-        celestialBody.push('Pluto');
-        return celestialBody;
+        let copyOfSolarSystem = celestialBody.slice();
+        copyOfSolarSystem.push('Pluto');
+        return copyOfSolarSystem;
     }
 
     console.log('Adding "Pluto" to the end of the planets array.');
