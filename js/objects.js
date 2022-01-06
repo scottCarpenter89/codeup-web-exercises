@@ -32,7 +32,7 @@
 
     person.sayHello = 'Hello from ';
     console.log(person.sayHello + person.firstName + ' ' + person.lastName);
-
+    console.log(`\n`);
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -48,11 +48,20 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    for (let person = 0; person < shoppers.length; person++) {
+        if (shoppers[person].amount > 200) {
+            let discount = shoppers[person].amount - (shoppers[person].amount * .12);
+            console.log(`${shoppers[person].name} spent $${shoppers[person].amount}, and received a 12% disount, bringing their total to $${discount}`);
+        } else {
+            console.log(`${shoppers[person].name} spent $${shoppers[person].amount}, but did not receive any discount because the did not spend more than $200 dollars.`);
+        }
+    }
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
