@@ -14,6 +14,30 @@
 //     call it with each of your array elements.
 //     write a printMovies function that takes an array as a parameter, iterates over the array, and calls printMovie on each of the array elements
 
+// *** Continuing MINI EXERCISE until lunch ***
+// Change the director member of your movies to an object
+    // with firstName and lastName members
+// Make an array member for your movies called genres.
+    // It is an array of string elements where each element
+    // is one of your movies’ genres from imdb.com
+    // and change your printMovie function
+    // please cupdate as you complete this ungraded practice exercise
+
+// let array = [{object1}, {object2}];
+// let arrayExample = [0, 1, 2]
+
+
+let moreMovies = [
+    {
+        title: 'Jurassic Park',
+        year: 1998
+    },
+    {
+        title: 'Intersellar',
+        year: 2015
+    }
+];
+
 let favMovies = [];
 favMovies[0] = {
     title: 'Fight Club',
@@ -34,9 +58,11 @@ favMovies[1] = {
 };
 
 function favoriteMovieInfo(movieObj) {
-    favMovies.forEach(function (object,) {
+    favMovies.forEach(function (object) {
         console.log(object);
     });
 }
 
 favoriteMovieInfo(favMovies);
+
+
