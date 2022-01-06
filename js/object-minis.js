@@ -16,27 +16,65 @@
 
 // *** Continuing MINI EXERCISE until lunch ***
 // Change the director member of your movies to an object
-    // with firstName and lastName members
+// with firstName and lastName members
 // Make an array member for your movies called genres.
-    // It is an array of string elements where each element
-    // is one of your movies’ genres from imdb.com
-    // and change your printMovie function
-    // please cupdate as you complete this ungraded practice exercise
+// It is an array of string elements where each element
+// is one of your movies’ genres from imdb.com
+// and change your printMovie function
+// please cupdate as you complete this ungraded practice exercise
 
-// let array = [{object1}, {object2}];
-// let arrayExample = [0, 1, 2]
+// *** last part of MINI EXERCISE ***
+// Add a rate(rating) function to each of your movie objects.
+//     The function takes an int parameter called rating
+// Modify rate(rating) to set a myRating property on that object
+// modify printMovie to display myRating for each movie
+// 15 minutes
+
+function printMovie(movieObj) {
+    movieObj.forEach(function (object) {
+        console.log(object);
+    });
+}
 
 
-let moreMovies = [
-    {
-        title: 'Jurassic Park',
-        year: 1998
-    },
-    {
-        title: 'Intersellar',
-        year: 2015
+function changeDirectorToObj(movieObjs) {
+    // needs to loop over the array and access the property to change to an obj
+    for (let i = 0; i < movieObjs.length; i++) {
+        let nameSplitter = movieObjs[i].director.split(' ');
+        movieObjs[i].director = {
+            firstName: nameSplitter[0],
+            lastName: nameSplitter[1]
+        }
     }
-];
+    return genreArray(movieObjs);
+}
+
+function genreArray(movieObjs) {
+    for (let i = 0; i < movieObjs.length; i++) {
+        movieObjs[i].genre = [];
+        if (movieObjs[i].title === 'Fight Club') {
+            movieObjs[i].genre = ['drama'];
+
+        } else {
+            movieObjs[i].genre = ['action', 'adventure'];
+
+        }
+    }
+    return rate(movieObjs);
+}
+
+function rate(rating) {
+    rating.forEach(function (movie) {
+        movie['myRating'] = movie['rating'];
+        if (movie.title === 'Fight Club') {
+            movie.myRating = 11;
+        } else {
+            movie.myRating = 10;
+        }
+    });
+    return printMovie(rating);
+}
+
 
 let favMovies = [];
 favMovies[0] = {
@@ -57,12 +95,8 @@ favMovies[1] = {
     academyAwardWin: true
 };
 
-function favoriteMovieInfo(movieObj) {
-    favMovies.forEach(function (object) {
-        console.log(object);
-    });
-}
 
-favoriteMovieInfo(favMovies);
+changeDirectorToObj(favMovies);
+
 
 
