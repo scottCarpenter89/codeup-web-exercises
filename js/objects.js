@@ -102,12 +102,16 @@
         }
     ];
 
+
+    books.push(createBook('How To Become A Supple Leopard', 'Dr. Kelly Starrett'));
+    books.push(createBook('The Great Gatsby', 'Francis Fitsgerald'));
+
     books.forEach(function (book,index) {
         console.log(`Book # ${index + 1}`);
-        console.log(`Title: ${book.title}`);
-        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        showBookInfo(book);
         console.log(`---`);
     });
+
 
     /**
      * TODO:
@@ -146,6 +150,20 @@
      *   `showBookInfo` function.
      */
 
+    function createBook(title, author) {
+        let splitName = author.split(' ');
+        return {
+            title: title,
+            author: {
+                firstName: splitName[0],
+                lastName: splitName[1]
+            }
+        }
+    }
 
+    function showBookInfo(book) {
+        console.log(`Author: ${book.title}`);
+        console.log(`Title: ${book.author.firstName} ${book.author.lastName}`);
+    }
 
 })();
