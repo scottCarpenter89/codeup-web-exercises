@@ -1,6 +1,48 @@
-.fancy-header {
+header {
     color: purple; /* single line comment */
+    text-align: center;
+    text-decoration: underline;
 }
 
 /* 5. precedence is the embedded/inline > attribute > external
  */
+
+body {
+    background-color: darkseagreen;
+    background-image: url("https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: 500px;
+
+}
+
+main {
+    color: #eeeeee;
+    font-family: 'Orbitron', sans-serif;
+}
+
+ul {
+    list-style: armenian;
+}
+
+th, td {
+    padding: 10px;
+    font-size: 30px;
+}
+
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
