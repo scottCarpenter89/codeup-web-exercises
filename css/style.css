@@ -1,0 +1,6 @@
+.fancy-header {
+    color: purple; /* single line comment */
+}
+
+/* 5. precedence is the embedded/inline > attribute > external
+ */
