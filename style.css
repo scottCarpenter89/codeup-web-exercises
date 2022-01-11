@@ -1,0 +1,7 @@
+.fancy-header {
+    color: purple; /* single line comment */
+}
+
+/* 5. precedence lies with the more practical of the two, which is external stylesheets because elements
+don't need to be changed individually and can be accessed by classes
+ */
