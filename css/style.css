@@ -1,3 +1,4 @@
+
 header {
     color: purple; /* single line comment */
     text-align: center;
@@ -11,7 +12,6 @@ body {
     background-color: darkseagreen;
     background-image: url("https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: 500px;
-
 }
 
 main {
@@ -23,18 +23,38 @@ ul {
     list-style: armenian;
 }
 
+table {
+    border-collapse: collapse;
+    border: 3px solid white;
+}
+
+td {
+    text-align: center;
+    border: 1px solid white;
+    background-color: dodgerblue;
+}
+
+th {
+    border: 3px solid white;
+    background-color: lightskyblue;
+    color: black;
+}
+
 th, td {
-    padding: 10px;
-    font-size: 30px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 20px;
+    width: 25%;
 }
 
 a:link {
-    color:red;
+    color: red;
 }
 
 /* visited link (:visited) */
 a:visited {
-    color:black;
+    color: black;
 }
 
 /* mouse hover over link (:hover) */
@@ -46,3 +66,6 @@ a:hover {
 a:active {
     color:green;
 }
+
+
+
