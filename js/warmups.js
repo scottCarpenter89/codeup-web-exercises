@@ -175,3 +175,21 @@ function hitchHiker(num){
 getMeaningOfLife('bananas');
 getMeaningOfLife(23);
 getMeaningOfLife(42);
+
+// Create a function called arrayToString.
+//     The function takes a parameter called myArray.
+//     It returns a string that is the concatenation of all the elements in myArray.
+//     This function is essentially your own version of join.
+//     Therefore, you cannot use join in your function body :slightly_smiling_face:
+//     Hint: use a loop
+
+function arrayToString(myArray) {
+    let resultString = '';
+for (let i = 0; i < myArray.length; i++){
+    resultString += myArray[i] + ' ';
+}
+return resultString;
+}
+
+let duckDayArray = ['Happy', 'national', 'rubber', 'duck', 'day'];
+console.log(arrayToString(duckDayArray));
