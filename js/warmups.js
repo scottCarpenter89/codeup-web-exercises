@@ -172,9 +172,9 @@ function hitchHiker(num){
     }
 }
 
-getMeaningOfLife('bananas');
-getMeaningOfLife(23);
-getMeaningOfLife(42);
+// getMeaningOfLife('bananas');
+// getMeaningOfLife(23);
+// getMeaningOfLife(42);
 
 // Create a function called arrayToString.
 //     The function takes a parameter called myArray.
@@ -191,5 +191,41 @@ for (let i = 0; i < myArray.length; i++){
 return resultString;
 }
 
-let duckDayArray = ['Happy', 'national', 'rubber', 'duck', 'day'];
-console.log(arrayToString(duckDayArray));
+// let duckDayArray = ['Happy', 'national', 'rubber', 'duck', 'day'];
+// console.log(arrayToString(duckDayArray));
+
+// JavaScript Warmup:
+//     Define a function named removeAll(array, value) that takes in two arguments. The first argument should be an array and the second argument should be a value you wish to remove
+// Given the following array as an argument (do not define this array inside your function - pass it in as an argument)
+// var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+// removeAll(bugs, "ant") should return ["mosquito", "scorpion", "mosquito", "typo", "reference error", "type error"]
+// removeAll(bugs, "mosquito") should return ["ant", "scorpion", "ant", "ant", "typo", "reference error", "type error"]
+// removeAll(bugs, "roach") should return the original array b/c “roach” has no occurrances.
+
+function removeAll(arrayInput, removeValue) {
+    // any undesired array values append to empty array
+    let removedValues = [];
+    let desiredArray = [];
+    // for each loop to cycle through each value
+    // for (let i = 0; i < arrayInput.length; i++){
+    //     if (arrayInput[i] === removeValue){
+    //         removedValues.push(arrayInput[i]);
+    //     } else {
+    //         desiredArray.push(arrayInput[i]);
+    //     }
+    // }
+    arrayInput.forEach(function (element){
+        if (element === removeValue){
+            removedValues.push(element);
+        } else {
+            desiredArray.push(element);
+        }
+    });
+return desiredArray;
+
+}
+
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+console.log(removeAll(bugs, "ant"));
+console.log(removeAll(bugs, 'mosquito'));
+console.log(removeAll(bugs, 'roach'));
