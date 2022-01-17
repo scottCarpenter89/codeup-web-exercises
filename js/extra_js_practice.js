@@ -1,7 +1,9 @@
 function getSum(a, b) {
     functionSum = a;
+    console.log(b);
 for (let i = a; i <= b; i++){
-    functionSum += [i];
+    numberToString = parseInt([i]);
+    functionSum += numberToString;
 }
 return functionSum;
 }
