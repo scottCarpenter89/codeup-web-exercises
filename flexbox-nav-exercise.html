@@ -5,15 +5,27 @@
     <title>Flexbox Navigation Exercise</title>
 </head>
 <body>
-<header>
-    <h2 class="nav-link">Logo</h2>
+<header class="nav-container">
     <nav>
-        <ul class="nav-link">
-            <a href="#"><li>Articles</li></a>
-            <a href="#"><li>Products</li></a>
-            <a href="#"><li>Market</li></a>
-            <a href="#"><li>Jobs</li></a>
-        </ul>
+        <div class="logo">
+            <h2 class="nav-link"><a href="#">Logo</a></h2>
+        </div>
+        <div class="left-nav">
+            <ul class="nav-link">
+                <li id="articles"><a href="#">Articles</a></li>
+                <li id="products"><a href="#">Products</a></li>
+                <li id="market"><a href="#">Market</a></li>
+                <li id="jobs"><a href="#">Jobs</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav-link">
+                <li><a href="#">Follow Us</a></li>
+                <li id="search"><a href="#"><img src="img/search-icon.png" alt="Search Icon"></a></li>
+                <li id="cart"><a href="#"><img src="img/cart.png" alt="Cart Icon"></a></li>
+                <li id="account"><a href="#"><img src="img/account.png" alt="Account Icon"></a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 </body>
