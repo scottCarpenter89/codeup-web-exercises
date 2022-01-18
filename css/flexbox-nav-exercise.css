@@ -9,7 +9,7 @@ body {
     background: lightgrey;
     display: flex;
     justify-content: space-between;
-    height: 75px;
+
 }
 a {
     display: inline-block;
