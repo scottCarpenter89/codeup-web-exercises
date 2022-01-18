@@ -2,32 +2,28 @@
     box-sizing: border-box;
 
 }
-
 body {
     margin: 0;
 }
-
 .container {
     background: lightgrey;
     display: flex;
     justify-content: space-between;
     height: 75px;
 }
-div {
-    align-items: auto;
-}
 a {
     display: inline-block;
     color: black;
     text-decoration: none;
-    padding: 1em;
 }
 a:hover {
     color: blue;
 }
-
 .logo {
     font-family: Montserrat, sans-serif;
+    font-size: 2em;
+    margin: auto;
+    padding: 0 .2em;
 }
 .nav-link {
     list-style: none;
@@ -40,9 +36,15 @@ a:hover {
     display: flex;
 }
 ul .nav-link {
-    padding-inline-start: 0px;
+    padding-inline-start: 0;
 }
 .right-nav {
     justify-content: right;
     display: flex;
+}
+li {
+    padding: 1em;
+}
+ul.nav-link {
+    padding-inline-start: 0;
 }
