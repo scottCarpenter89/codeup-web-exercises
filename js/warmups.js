@@ -261,10 +261,6 @@ function getNthCat(cats, n) {
             catName: "Biscuit",
             age: 4
         },
-        {
-            catName: "Satan",
-            age: NaN
-        }
     ];
 
 // print out the cat at index 1
