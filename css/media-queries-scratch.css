@@ -1,0 +1,13 @@
+* {
+    padding: .5em;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.alert-info {
+    margin: 0 auto;
+    padding: 1em;
+    border: 1px solid darkgrey;
+    flex-basis: 300px;
+}
