@@ -225,7 +225,51 @@ return desiredArray;
 
 }
 
-var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
-console.log(removeAll(bugs, "ant"));
-console.log(removeAll(bugs, 'mosquito'));
-console.log(removeAll(bugs, 'roach'));
+// var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+// console.log(removeAll(bugs, "ant"));
+// console.log(removeAll(bugs, 'mosquito'));
+// console.log(removeAll(bugs, 'roach'));
+
+// Write a JS function called getNthCat that takes an array of cat objects as a first parameter called cats, and n as a second parameter.
+//     The function returns the cat object at index n in the cats array.
+//     For example:
+function getNthCat(cats, n) {
+    // first script I wrote to get the object
+    // for (let catObject = 0; catObject < cats.length; catObject++){
+    //     if (catObject === n) {
+    //         return cats[catObject];
+    //     }
+    // }
+
+    // much more simple and returns the same thing
+    return cats[n];
+}
+    var myCats = [
+        {
+            catName: "Fifi",
+            age: 5
+        },
+        {
+            catName: "Fluffy",
+            age: 3
+        },
+        {
+            catName: "Abby",
+            age: 7
+        },
+        {
+            catName: "Biscuit",
+            age: 4
+        },
+        {
+            catName: "Satan",
+            age: NaN
+        }
+    ];
+
+// print out the cat at index 1
+console.log(getNthCat(myCats, 0));
+console.log(getNthCat(myCats, 1));
+console.log(getNthCat(myCats, 2));
+console.log(getNthCat(myCats, 3));
+console.log(getNthCat(myCats, 4));
