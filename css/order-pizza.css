@@ -1,0 +1,9 @@
+:root {
+    --nav-bar-text: rgba(0, 0, 0, .5);
+}
+i {
+    color: var(--nav-bar-text);
+}
+a.link {
+    color: var(--nav-bar-text);
+}
