@@ -7,3 +7,6 @@ i {
 a.link {
     color: var(--nav-bar-text);
 }
+.pizza-banner {
+    background-image: url("/img/pizza-banner.png");
+}
