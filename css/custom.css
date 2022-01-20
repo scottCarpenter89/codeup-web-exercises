@@ -1,6 +1,7 @@
 :root {
     --nav-bar-text: rgba(0, 0, 0, .5);
 }
+
 i {
     color: var(--nav-bar-text);
 }
@@ -9,4 +10,13 @@ a.link {
 }
 .pizza-banner {
     background-image: url("/img/pizza-banner.png");
+    display: flex;
 }
+.container {
+    background: rgba(255, 255, 255, .5);
+    max-width: inherit;
+}
+h1 {
+
+}
+
