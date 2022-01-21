@@ -1,3 +1,7 @@
 .border-success {
     border-width: 3px !important;
 }
+
+.outside {
+    padding: 2em;
+}
