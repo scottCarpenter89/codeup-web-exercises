@@ -143,7 +143,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-end border rounded">
                         <a>
-                            <button type="button" id="cheese-sauce-tab" class="btn btn-primary">Next Step ></button>
+                            <button type="button" id="to-cheese-and-sauce" class="btn btn-primary">Next Step ></button>
                         </a>
                     </div>
                 </div>
@@ -152,13 +152,52 @@
             <!--CHEESE AND SAUCE TAB-->
             <div class="tab-pane fade" id="cheese-sauce" role="tabpanel" aria-labelledby="cheese-sauce-tab">
                 <div class="card p-3">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-primary text-white rounded">
                         Choose Cheese and Sauce
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <br>
+                    <div class="cheese-options border rounded">
+                        <div class="card-header">
+                            Cheese
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border"><p>How much?</p>
+                                <select class="custom-select">
+                                    <option selected>Regular</option>
+                                    <option value="1">Light</option>
+                                    <option value="2">Normal</option>
+                                    <option value="3">Extra</option>
+                                    <option value="4">Double</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="sauce-options border rounded">
+                        <div class="card-header">
+                            Sauce
+                        </div>
+                        <ul class="list-group list-group-flush border-bottom">
+                            <li class="list-group-item"><p>What type?</p>
+                                <select class="custom-select">
+                                    <option selected>Robust Inspired Tomato Sauce</option>
+                                    <option value="1">Tomato sacue</option>
+                                    <option value="2">Marinara sauce</option>
+                                    <option value="3">BBQ sauce</option>
+                                    <option value="4">Alfredo sauce</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><p>How much?</p>
+                                <select class="custom-select">
+                                    <option selected>Regular</option>
+                                    <option value="1">Light</option>
+                                    <option value="2">Normal</option>
+                                    <option value="3">Extra</option>
+                                </select>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
