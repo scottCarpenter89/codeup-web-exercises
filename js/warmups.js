@@ -264,8 +264,18 @@ function getNthCat(cats, n) {
     ];
 
 // print out the cat at index 1
-console.log(getNthCat(myCats, 0));
-console.log(getNthCat(myCats, 1));
-console.log(getNthCat(myCats, 2));
-console.log(getNthCat(myCats, 3));
-console.log(getNthCat(myCats, 4));
+// console.log(getNthCat(myCats, 0));
+// console.log(getNthCat(myCats, 1));
+// console.log(getNthCat(myCats, 2));
+// console.log(getNthCat(myCats, 3));
+// console.log(getNthCat(myCats, 4));
+
+function reverseString(inputString) {
+    let resultString = '';
+   for (let i = inputString.length - 1; i > -1; i--) {
+       resultString += inputString[i];
+   }
+    console.log(resultString);
+}
+
+typeof reverseString('hello');
