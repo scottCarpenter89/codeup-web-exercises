@@ -272,11 +272,16 @@ var myCats = [
 // console.log(getNthCat(myCats, 4));
 
 function reverseString(inputString) {
-    let resultString = '';
-    for (let i = inputString.length - 1; i > -1; i--) {
-        resultString += inputString[i];
-    }
-    console.log(resultString);
-}
+    // let resultString = '';
+    // for (let i = inputString.length - 1; i > -1; i--) {
+    //     resultString += inputString[i];
+    // }
+    // console.log(resultString);
 
-typeof reverseString('hello');
+    /*--------------------------OR------------------------*/
+    let stringToArray = inputString.split('');
+    let ArrayToStringReversed = stringToArray.reverse();
+    console.log(ArrayToStringReversed.join(''));
+
+}
+reverseString('hello');
