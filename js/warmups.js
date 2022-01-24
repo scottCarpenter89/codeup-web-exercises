@@ -28,8 +28,8 @@ if ((creditScore >= minCredit && cashOnHand >= minCash) || cashOnHand >= cashIsK
 }*/
 
 // 12/13/2021
-function isFive(number){
-    if (number === 5){
+function isFive(number) {
+    if (number === 5) {
         return true;
     } else if (number === '5') {
         parseInt(number);
@@ -47,7 +47,7 @@ function isFive(number){
 
 // 12/14/2021
 
-function isMultipleOfThree(input){
+function isMultipleOfThree(input) {
     let includeStrings = parseInt(input);
     return includeStrings % 3 === 0;
 }
@@ -64,18 +64,18 @@ function isMultipleOfThree(input){
 //     a. You should find the square of a, then the square of b.
 //     b. Invoke add(num1, num2) and pass the new squared values in as arguments.
 
-function add(num1, num2){
+function add(num1, num2) {
     return num1 + num2;
 }
 
-function square(numToSqr){
+function square(numToSqr) {
     return numToSqr * numToSqr
 }
 
-function sumOfSquares(a, b){
-  let aSquared = square(a);
-  let bSquared = square(b);
-  return add(aSquared, bSquared);
+function sumOfSquares(a, b) {
+    let aSquared = square(a);
+    let bSquared = square(b);
+    return add(aSquared, bSquared);
 }
 
 // console.log(sumOfSquares(5, 12));
@@ -83,23 +83,23 @@ function sumOfSquares(a, b){
 // console.log(sumOfSquares(7, 3));
 
 // FIZZ-BUZZZZZZZ
-    // 1. Write a function named getFizzBuzz(startingNum) which performs the following actions:
-    // 2. If startingNum is divisible by 3
-        // a. console log "fizz"
-    // 3. Else, if startingNum is divisible by 5
-        // a. console log "buzz"
-    // 4. If startingNum is divisible by 3 AND divisible by 5
-        // a. return a string which says "FIZZ BUZZ"
-    // 5. Thinking about getFizzBuzz(startingNum), let's console log the return value of this function
-    // 6. What if getFizzBuzz doesn't return a value (VOID)?
-        // a. How do you want to handle that?
+// 1. Write a function named getFizzBuzz(startingNum) which performs the following actions:
+// 2. If startingNum is divisible by 3
+// a. console log "fizz"
+// 3. Else, if startingNum is divisible by 5
+// a. console log "buzz"
+// 4. If startingNum is divisible by 3 AND divisible by 5
+// a. return a string which says "FIZZ BUZZ"
+// 5. Thinking about getFizzBuzz(startingNum), let's console log the return value of this function
+// 6. What if getFizzBuzz doesn't return a value (VOID)?
+// a. How do you want to handle that?
 
-function getFizzBuzz(startingNum){
-    if (startingNum % 3 === 0 && startingNum % 5 === 0){
+function getFizzBuzz(startingNum) {
+    if (startingNum % 3 === 0 && startingNum % 5 === 0) {
         return console.log('FIZZ BUZZ');
-    } else if (startingNum % 5 === 0){
+    } else if (startingNum % 5 === 0) {
         console.log('fizz');
-    } else if (startingNum % 3 === 0){
+    } else if (startingNum % 3 === 0) {
         console.log('buzz');
     } else {
         return console.log(undefined);
@@ -112,9 +112,9 @@ function getFizzBuzz(startingNum){
 // getFizzBuzz();
 
 // getPaswordInput
-    // 1. Define a function named getPassword() which performs the following actions:
-    //     a. Using prompt(), alert(), variables, and a while-loop, ask the user to input their password until their entry matches your hard-coded password value.
-    //     HINT: start by defining the correct password and don't forget to link your html file
+// 1. Define a function named getPassword() which performs the following actions:
+//     a. Using prompt(), alert(), variables, and a while-loop, ask the user to input their password until their entry matches your hard-coded password value.
+//     HINT: start by defining the correct password and don't forget to link your html file
 
 function getPassword() {
 // establish the password with a variable
@@ -122,17 +122,17 @@ function getPassword() {
     let userPWInput = prompt('Please type in your password.');
     let attempts = 1;
     // can also use do while and start attempts from 0 with initializing prompt inside the do{}
-        // let attempts = 0;
-        // do {
-            // prompt = ('Please enter your password');
-            // attempts++;
-        // } while (validPassword !== userPWInput && attempts < 3);
-    while (userPWInput !== validPassword && attempts < 3){
+    // let attempts = 0;
+    // do {
+    // prompt = ('Please enter your password');
+    // attempts++;
+    // } while (validPassword !== userPWInput && attempts < 3);
+    while (userPWInput !== validPassword && attempts < 3) {
         alert('Your password is incorrect. Please enter the correct password.');
         userPWInput = prompt('Please retry your password.');
         attempts++;
     }
-    if (attempts > 2){
+    if (attempts > 2) {
         alert('You are out of attempts. Please try again later.');
     } else {
         alert('Your password is correct!');
@@ -143,14 +143,14 @@ function getPassword() {
 
 // getMeaningOfLife
 // 1. Write a function named getMeaningOfLife which accepts one parameter, meaningfulNum.
-    //     a. this function will use a while loop to compare its current number (a variable named counter) against the meaningfulNum.
+//     a. this function will use a while loop to compare its current number (a variable named counter) against the meaningfulNum.
 // 2. While the counter is not equivalent to the meaningfulNum, continue the loop.
-    //     a. Once that condition is broken, console log a string telling the user "The meaning of life, the universe, and everything is [your meaningful number]"
+//     a. Once that condition is broken, console log a string telling the user "The meaning of life, the universe, and everything is [your meaningful number]"
 // 3. Thinking about the above function, getMeaningOfLife, let’s ask a question: What happens if the value of meaningfulNum is a non-numeric?
-    //     a. Write some code to account for this case. How the function handles the situation is up to you!
+//     a. Write some code to account for this case. How the function handles the situation is up to you!
 // 4. Let’s continue with getMeaningOfLife: If the value of meaningfulNum happens to be 42, console log a separate message at the end of the function to say: "Did you bring your towel?"
 
-function getMeaningOfLife(meaningfulNum){
+function getMeaningOfLife(meaningfulNum) {
     let counter = 0;
     meaningfulNum = parseInt(meaningfulNum);
     if (meaningfulNum) {
@@ -162,8 +162,8 @@ function getMeaningOfLife(meaningfulNum){
 }
 
 
-function hitchHiker(num){
-    if (num === 42){
+function hitchHiker(num) {
+    if (num === 42) {
         console.log('Did you bring your towel?');
     } else if (isNaN(num)) {
         console.log('Numbers have meaning friend. Continue your quest.');
@@ -185,10 +185,10 @@ function hitchHiker(num){
 
 function arrayToString(myArray) {
     let resultString = '';
-for (let i = 0; i < myArray.length; i++){
-    resultString += myArray[i] + ' ';
-}
-return resultString;
+    for (let i = 0; i < myArray.length; i++) {
+        resultString += myArray[i] + ' ';
+    }
+    return resultString;
 }
 
 // let duckDayArray = ['Happy', 'national', 'rubber', 'duck', 'day'];
@@ -214,14 +214,14 @@ function removeAll(arrayInput, removeValue) {
     //         desiredArray.push(arrayInput[i]);
     //     }
     // }
-    arrayInput.forEach(function (element){
-        if (element === removeValue){
+    arrayInput.forEach(function (element) {
+        if (element === removeValue) {
             removedValues.push(element);
         } else {
             desiredArray.push(element);
         }
     });
-return desiredArray;
+    return desiredArray;
 
 }
 
@@ -244,24 +244,25 @@ function getNthCat(cats, n) {
     // much more simple and returns the same thing
     return cats[n];
 }
-    var myCats = [
-        {
-            catName: "Fifi",
-            age: 5
-        },
-        {
-            catName: "Fluffy",
-            age: 3
-        },
-        {
-            catName: "Abby",
-            age: 7
-        },
-        {
-            catName: "Biscuit",
-            age: 4
-        },
-    ];
+
+var myCats = [
+    {
+        catName: "Fifi",
+        age: 5
+    },
+    {
+        catName: "Fluffy",
+        age: 3
+    },
+    {
+        catName: "Abby",
+        age: 7
+    },
+    {
+        catName: "Biscuit",
+        age: 4
+    },
+];
 
 // print out the cat at index 1
 // console.log(getNthCat(myCats, 0));
@@ -272,9 +273,9 @@ function getNthCat(cats, n) {
 
 function reverseString(inputString) {
     let resultString = '';
-   for (let i = inputString.length - 1; i > -1; i--) {
-       resultString += inputString[i];
-   }
+    for (let i = inputString.length - 1; i > -1; i--) {
+        resultString += inputString[i];
+    }
     console.log(resultString);
 }
 
