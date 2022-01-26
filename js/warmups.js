@@ -284,4 +284,19 @@ function reverseString(inputString) {
     console.log(ArrayToStringReversed.join(''));
 
 }
-reverseString('hello');
+// reverseString('hello');
+
+// 1/26/2022 write a function that takes in an array and returns the average
+
+function findAverage(gradeArray) {
+    let gradesSum = 0;
+
+  for (let i = 0; i < gradeArray.length; i++) {
+      gradesSum += gradeArray[i];
+  }
+  let average = gradesSum / gradeArray.length;
+    console.log(average);
+}
+
+let avg1= [95, 74, 86, 100];
+findAverage(avg1)
