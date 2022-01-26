@@ -43,13 +43,10 @@
         var listItems = document.getElementsByTagName('li');
         console.log(listItems);
         // TODO: Set text color on every other list item to grey
+
         // TODO: Set text color of li with dbid = 1 to blue
-        for (let i = 0; i < listItems.length; i++) {
-            var metaData = listItems[i].getAttribute('data-dbid');
-            var currentElement = listItems[i].innerHTML
-            if (metaData % 2 === 1) {
-                currentElement.style.color = '#808080';
-            }
+        for (let i = 0; i < listItems.length; i+=2) {
+            listItems[i].style.color = '#808080';
         }
         listItems[0].style.color = '#0000FF';
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
