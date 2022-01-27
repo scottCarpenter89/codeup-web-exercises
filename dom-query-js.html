@@ -43,12 +43,16 @@
         var listItems = document.getElementsByTagName('li');
         console.log(listItems);
         // TODO: Set text color on every other list item to grey
-
         // TODO: Set text color of li with dbid = 1 to blue
         for (let i = 0; i < listItems.length; i+=2) {
             listItems[i].style.color = '#808080';
+            // can use if statement here in same loop or use query selector on line 55
+            if (listItems[i].getAttribute('data-dbid') === '1') {
+                listItems[i].style.color = 'blue';
+           }
         }
-        listItems[0].style.color = '#0000FF';
+        // ---------- OR --------------
+        document.querySelector("[data-dbid='1']").style.color = 'blue';
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
         console.log(subParagraphs);

@@ -299,4 +299,19 @@ function findAverage(gradeArray) {
 }
 
 let avg1= [95, 74, 86, 100];
-findAverage(avg1)
+// findAverage(avg1)
+
+// 1/26/2022 write a function called sumOfSquares(a, b)
+// takes 2 parameters called a and b
+// returns the sum of the squares of a and b
+// i.e., (a to the power of 2) + (b to the power of 2)
+// e.g., console.log(sumOfSquares(2, 3));
+// will return 13
+
+function sumOfSquares(a, b) {
+    return Math.pow(a, 2) + Math.pow(b, 2);
+}
+
+console.log(sumOfSquares(4, 3));
+console.log(sumOfSquares(2,3));
+console.log(sumOfSquares(5,5));
