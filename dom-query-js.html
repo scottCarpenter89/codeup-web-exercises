@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
+    <link rel="stylesheet" href="css/dom-query-js.css">
 </head>
 <body>
 
@@ -24,40 +25,69 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<br>
+<button type="button" id="modify-header">Modify the header</button>
+<br>
+<br>
+<button type="button" id="sub-header-blue">Turn sub-header text blue</button>
+<br>
+<br>
+<button type="button" id="colored-list-items">Turn change list items color</button>
+<br>
+<br>
+<button type="button" id="complete-mission">Complete the mission</button>
 
 <script>
     (function () {
         "use strict";
+
+
         // TODO: Uncomment next line and get the main header element by
-        var mainHeader = document.querySelector('h1');
-        console.log(mainHeader);
+
+        // var mainHeader = document.querySelector('#modify-header');
+        // console.log(mainHeader);
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'JavaScript is Cool';
-        console.log(mainHeader);
+        var changeHeader = function () {
+            document.querySelector('#main-header').innerHTML = 'JavaScript is Cool';
+        }
+        document.querySelector('#modify-header').addEventListener('click', changeHeader);
+        // console.log(mainHeader);
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
-        console.log(subHeader);
+        // console.log(subHeader);
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = '#0000FF';
+        var turnHeaderBlue = function () {
+            document.querySelector("#sub-header").style.color = '#0000FF'
+        };
+        document.querySelector('#sub-header-blue').addEventListener('click', turnHeaderBlue);
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
-        console.log(listItems);
+        // console.log(listItems);
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        for (let i = 0; i < listItems.length; i+=2) {
-            listItems[i].style.color = '#808080';
-            // can use if statement here in same loop or use query selector on line 55
-            if (listItems[i].getAttribute('data-dbid') === '1') {
-                listItems[i].style.color = 'blue';
-           }
-        }
+
         // ---------- OR --------------
-        document.querySelector("[data-dbid='1']").style.color = 'blue';
+        // document.querySelector("[data-dbid='1']").style.color = 'blue';
+
+        var coloredListItems = function () {
+            for (let i = 0; i < listItems.length; i+=2) {
+                listItems[i].style.color = '#808080';
+                // can use if statement here in same loop or use query selector on line 55
+                if (listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = 'blue';
+                }
+            }
+        }
+        document.querySelector("#colored-list-items").addEventListener('click', coloredListItems);
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph');
-        console.log(subParagraphs);
+
+        // console.log(subParagraphs);
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = 'Mission Accomplished!';
+
+        var completeTheMission = function () {
+           document.querySelector('p').innerHTML = 'Mission Accomplished';
+        }
+        document.querySelector('#complete-mission').addEventListener('click', completeTheMission);
     })();
 </script>
 </body>
