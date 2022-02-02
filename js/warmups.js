@@ -284,6 +284,7 @@ function reverseString(inputString) {
     console.log(ArrayToStringReversed.join(''));
 
 }
+
 // reverseString('hello');
 
 // 1/26/2022 write a function that takes in an array and returns the average
@@ -291,14 +292,14 @@ function reverseString(inputString) {
 function findAverage(gradeArray) {
     let gradesSum = 0;
 
-  for (let i = 0; i < gradeArray.length; i++) {
-      gradesSum += gradeArray[i];
-  }
-  let average = gradesSum / gradeArray.length;
+    for (let i = 0; i < gradeArray.length; i++) {
+        gradesSum += gradeArray[i];
+    }
+    let average = gradesSum / gradeArray.length;
     console.log(average);
 }
 
-let avg1= [95, 74, 86, 100];
+let avg1 = [95, 74, 86, 100];
 // findAverage(avg1)
 
 // 1/26/2022 write a function called sumOfSquares(a, b)
@@ -312,6 +313,37 @@ function sumOfSquares(a, b) {
     return Math.pow(a, 2) + Math.pow(b, 2);
 }
 
-console.log(sumOfSquares(4, 3));
-console.log(sumOfSquares(2,3));
-console.log(sumOfSquares(5,5));
+// console.log(sumOfSquares(4, 3));
+// console.log(sumOfSquares(2,3));
+// console.log(sumOfSquares(5,5));
+
+// 2/1/2022
+
+// Write a function called whichStringIsLonger() that takes two parameters and returns one of 4 values:
+//     returns "first" if the first string parameter is longer
+// returns "second" if the second parameter is longer
+// returns "neither" if they are the same length
+// returns false if either or both of the parameters are not strings
+
+// function whichStringIsLonger(input1, input2) {
+//     let parameterLength1 = input1.length;
+//     let parameterLength2 = input2.length;
+//     if (typeof input1 !== 'string' || typeof input2 !== 'string') {
+//         return false;
+//     }
+//     if (parameterLength1 > parameterLength2) {
+//         return 'first';
+//     }
+//     if (parameterLength1 < parameterLength2) {
+//         return 'second';
+//     }
+//     return 'neither';
+// }
+//
+// console.log(whichStringIsLonger("bobby", "lou")); // returns first
+// console.log(whichStringIsLonger("bob", "louise")); // returns second
+// console.log(whichStringIsLonger("bob", "lou")); // returns neither
+// console.log(whichStringIsLonger("bobby", 2)); // returns false
+// console.log(whichStringIsLonger(1, "lou")); // returns false
+
+// 2/2/2022
