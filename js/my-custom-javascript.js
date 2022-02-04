@@ -2,7 +2,7 @@
 
 /* Assigning two ids for two different elements only displays the contents for the first and returns undefined for the
 second id assigned the id*/
-
+$(document).ready(function () {
 // var contents = $('#welcome').html();
 // alert(contents);
 //
@@ -47,3 +47,6 @@ $('li').hover(
     function () {
         $(this).css('color', 'black');
     });
+
+
+});
