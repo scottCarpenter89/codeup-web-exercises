@@ -346,4 +346,22 @@ function sumOfSquares(a, b) {
 // console.log(whichStringIsLonger("bobby", 2)); // returns false
 // console.log(whichStringIsLonger(1, "lou")); // returns false
 
-// 2/2/2022
+// 2/4/2022
+
+// Write a function called convertLowHighToObject that takes in a string  that represents the low and high temperature in this format '35, 42' (assuming low will always be the left value and high the right) and returns an object with the properties 'low' and 'high' with the values of those respective properties set to the corresponding values in the input string.
+//     NOTE: the values in the object should be of the number type
+// Example input: '35, 42'
+// Example return: {low: 35, high: 42}
+
+function convertLowHighToObject (lowHigh) {
+let lowHighArray = lowHigh.split(', ');
+    return {
+        low: parseInt(lowHighArray[0]),
+        high: parseInt(lowHighArray[0])
+    }
+}
+
+console.log(convertLowHighToObject('23, 54'));
+console.log(convertLowHighToObject('-17, 57'));
+console.log(convertLowHighToObject('80, 1000'));
+console.log(convertLowHighToObject('\'raymonds house right now', '76\''));
