@@ -34,3 +34,8 @@ $('h1').click(
     function () {
         $(this).css('background-color', 'green')
     });
+
+$('p').dblclick(
+    function () {
+        $(this).css('font-size', '18px');
+    });
