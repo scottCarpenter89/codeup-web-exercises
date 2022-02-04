@@ -353,15 +353,15 @@ function sumOfSquares(a, b) {
 // Example input: '35, 42'
 // Example return: {low: 35, high: 42}
 
-function convertLowHighToObject (lowHigh) {
-let lowHighArray = lowHigh.split(', ');
-    return {
-        low: parseInt(lowHighArray[0]),
-        high: parseInt(lowHighArray[0])
-    }
-}
-
-console.log(convertLowHighToObject('23, 54'));
-console.log(convertLowHighToObject('-17, 57'));
-console.log(convertLowHighToObject('80, 1000'));
-console.log(convertLowHighToObject('\'raymonds house right now', '76\''));
+// function convertLowHighToObject (lowHigh) {
+// let lowHighArray = lowHigh.split(', ');
+//     return {
+//         low: parseInt(lowHighArray[0]),
+//         high: parseInt(lowHighArray[0])
+//     }
+// }
+//
+// console.log(convertLowHighToObject('23, 54'));
+// console.log(convertLowHighToObject('-17, 57'));
+// console.log(convertLowHighToObject('80, 1000'));
+// console.log(convertLowHighToObject('\'raymonds house right now', '76\''));
