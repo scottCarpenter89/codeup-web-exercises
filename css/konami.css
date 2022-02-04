@@ -1,15 +1,31 @@
+/**{*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
+/*html {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
 body {
     position: -ms-device-fixed;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
-
+    height: 100%;
+    weight: 100%;
 
 }
+h1 {
+    margin: auto;
+    align-text: center;
 
-.konami-code {
+}
+.video-container {
     width: 100%;
     height: 100%;
-
+    display: none;
+    /*clear: left;*/
+}
+iframe {
+    height: 100%;
+    width: 100%;
 }

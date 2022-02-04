@@ -5,8 +5,12 @@
     <link rel="stylesheet" href="css/konami.css">
 </head>
 <body>
+
+
 <h1>Konami Code</h1>
 
+
+</main>
 <script src="/js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
@@ -16,11 +20,12 @@
         userInput.push(event.keyCode);
         if (userInput.length === konamiCode.length) {
             alert('Cheater! It\'s time to pay the piper!');
-            $('body').css('background-color', 'black');
+            $('html').css('height', '100%').css('width', '100%');
+            $('body').css('background-color', 'black').css('height', '100%').css('width', '100%');
+            $('h1').css('display', 'none');
             $('body').html('<iframe class="konami-video" width="560" height="315" src="https://www.youtube.com/embed/giR3NFtAfJg?controls=0&autoplay=1&start=144&end=166" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>');
         }
     });
-
 </script>
 </body>
 </html>
