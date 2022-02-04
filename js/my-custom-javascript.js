@@ -15,16 +15,22 @@ second id assigned the id*/
 
 // $('.codeup').css('border', '1px solid red');
 
-$('li').css('font-size', '20px');
+// $('li').css('font-size', '20px');
+//
+// var welcome = $('#welcome').html();
+// alert(welcome);
+//
+// var whoWeAre = $('#what-we-bout').html();
+// alert(whoWeAre);
+//
+// var featuredNums = $('#elvish-bread').html();
+// alert('Here is our featured item for tonight: ' + featuredNums);
+//
+// $('#welcome, #what-we-bout, .menu-item').css('background', 'yellow');
 
-var welcome = $('#welcome').html();
-alert(welcome);
+// Mouse Events
 
-var whoWeAre = $('#what-we-bout').html();
-alert(whoWeAre);
-
-var featuredNums = $('#elvish-bread').html();
-alert('Here is our featured item for tonight: ' + featuredNums);
-
-$('#welcome, #what-we-bout, .menu-item').css('background', 'yellow');
-
+$('h1').click(
+    function () {
+        $(this).css('background-color', 'green')
+    });
