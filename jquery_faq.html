@@ -57,7 +57,8 @@
         });
 
         $('dt').click(function () {
-            let $highlight = $('dt').addClass('highlight');
+            // let $highlight = $('dt').addClass('highlight');
+            // ^^^ this line is not necessary and will make it buggy. Toggle will simple do the opposite of that is in setter
             $(this).toggleClass('highlight');
         })
     });
