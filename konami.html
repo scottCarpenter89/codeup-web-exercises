@@ -6,17 +6,21 @@
 </head>
 <body>
 
+<header>
 
-<h1>Konami Code</h1>
+    <p><h1>Konami Code</h1></p>
+    <p><input type="text" id="cheat-input" placeholder="Enter your cheat code"></p>
+</header>
+<div>
 
-
+</div>
 </main>
 <script src="/js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
     let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
     let userInput = [];
-    $(document).keyup(function(event){
+    $('input').keyup(function (event) {
         userInput.push(event.keyCode);
         if (userInput.length === konamiCode.length) {
             alert('Cheater! It\'s time to pay the piper!');
