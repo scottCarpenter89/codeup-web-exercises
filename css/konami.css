@@ -1,0 +1,15 @@
+body {
+    position: -ms-device-fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.konami-code {
+    width: 100%;
+    height: 100%;
+
+}

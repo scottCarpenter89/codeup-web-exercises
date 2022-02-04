@@ -14,18 +14,10 @@
     let userInput = [];
     $(document).keyup(function(event){
         userInput.push(event.keyCode);
-        // keyStroke.push(userInput);
-        console.log(userInput)
-         let userLiteral = JSON.stringify(userInput).length;
-
         if (userInput.length === konamiCode.length) {
             alert('Cheater! It\'s time to pay the piper!');
             $('body').css('background-color', 'black');
-            $('body').html('<iframe class="konami-video" width="1024" height="882" src="https://www.youtube.com/embed/giR3NFtAfJg?controls=0&autoplay=1&start=144&end=166" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>');
-            // $('iframe').css(function (e) {
-            //     $(this).css('display', 'flex');
-            //     $(this).css('justify-content', 'center');
-            });
+            $('body').html('<iframe class="konami-video" width="560" height="315" src="https://www.youtube.com/embed/giR3NFtAfJg?controls=0&autoplay=1&start=144&end=166" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>');
         }
     });
 
