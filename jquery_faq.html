@@ -46,6 +46,37 @@
     </dl>
     <button id="toggle-button">Reveal Answers</button>
 </div>
+
+<section>
+    <h3>Yellowstone</h3>
+        <ul class="park-facts">
+            <li>Yellowstone is actually not the largest national park</li>
+            <li>Yellowstone is actually not most visited park, but it is one of the most visited parks nationally</li>
+            <li>The highest formation is Eagle Peak at a height of 11.358 ft</li>
+        </ul>
+    <h3>Big Bend</h3>
+    <ul class="park-facts">
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus?</li>
+    </ul>
+    <h3>Mesa Verde</h3>
+    <ul class="park-facts">
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis!</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, voluptate!</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor facilis laudantium quisquam velit!</li>
+    </ul>
+    <h3>Carlsbad Caverns</h3>
+    <ul class="park-facts">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At deleniti, modi necessitatibus nisi praesentium
+            rem.
+        </li>
+    </ul>
+    <button type="button" id="highlight-btn">Highlight</button>
+
+</section>
 <script src="/js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
@@ -61,6 +92,14 @@
             // ^^^ this line is not necessary and will make it buggy. Toggle will simple do the opposite of that is in setter
             $(this).toggleClass('highlight');
         })
+
+        // Create a button that, when clicked, makes the last li in each ul have a yellow background.
+        $('#highlight-btn').click(function(event) {
+            event.preventDefault();
+            $('.park-facts').each(function () {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
     });
 </script>
 </body>
