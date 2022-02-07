@@ -100,6 +100,10 @@
                 $(this).children().last().css('background-color', 'yellow');
             });
         });
+        $('h3').click(function (event) {
+            event.preventDefault();
+            $('.park-facts').children().css('font-weight', 'bold');
+        })
     });
 </script>
 </body>
