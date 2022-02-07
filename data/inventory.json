@@ -30,5 +30,26 @@
     "tool"
   ],
   "price": 10
+}, {
+  "title": "Miter Saw",
+  "quantity": 12,
+  "categories": [
+    "powered"
+  ],
+  "price": 50
+}, {
+  "title": "Table Saw",
+  "quantity": 7,
+  "categories": [
+    "powered"
+  ],
+  "price": 75
+}, {
+  "title": "Speed Square",
+  "quantity": 25,
+  "categories": [
+    "tool"
+  ],
+  "price": 8
 }
 ]
