@@ -35,12 +35,20 @@
             scenic rivers and trails, and the White House.
         </dd>
         <dt>7. What is the largest national park site? Smallest?</dt>
-        <dd><li>Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</li></dd>
-        <dd><li>Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</li></dd>
+        <dd>
+            <li>Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</li>
+        </dd>
+        <dd>
+            <li>Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</li>
+        </dd>
         <dt>8. How many people visit the national parks?</dt>
-        <dd><li>Total recreation visitors to the national parks in 2019: 327,516,619.</li></dd>
+        <dd>
+            <li>Total recreation visitors to the national parks in 2019: 327,516,619.</li>
+        </dd>
         <dt>9. What is the National Park Service budget?</dt>
-        <dd><li>FY 2017 Enacted: $2.932 billion</li></dd>
+        <dd>
+            <li>FY 2017 Enacted: $2.932 billion</li>
+        </dd>
         <dt>10. Can I bring my service dog to a national park?</dt>
         <dd>Yes, service dogs are legally permitted anywhere in a park that visitors can go.</dd>
     </dl>
@@ -49,11 +57,11 @@
 
 <section>
     <h3>Yellowstone</h3>
-        <ul class="park-facts">
-            <li>Yellowstone is actually not the largest national park</li>
-            <li>Yellowstone is actually not most visited park, but it is one of the most visited parks nationally</li>
-            <li>The highest formation is Eagle Peak at a height of 11.358 ft</li>
-        </ul>
+    <ul class="park-facts">
+        <li>Yellowstone is actually not the largest national park</li>
+        <li>Yellowstone is actually not most visited park, but it is one of the most visited parks nationally</li>
+        <li>The highest formation is Eagle Peak at a height of 11.358 ft</li>
+    </ul>
     <h3>Big Bend</h3>
     <ul class="park-facts">
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
@@ -80,9 +88,9 @@
 <script src="/js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('dd').addClass('invisible');
-        $('#toggle-button').click(function(event) {
+        $('#toggle-button').click(function (event) {
             event.preventDefault();
             $('dd').toggleClass('invisible');
         });
@@ -94,16 +102,22 @@
         })
 
         // Create a button that, when clicked, makes the last li in each ul have a yellow background.
-        $('#highlight-btn').click(function(event) {
+        $('#highlight-btn').click(function (event) {
             event.preventDefault();
             $('.park-facts').each(function () {
                 $(this).children().last().css('background-color', 'yellow');
             });
         });
+        // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
         $('h3').click(function (event) {
             event.preventDefault();
             $('.park-facts').children().css('font-weight', 'bold');
+        });
+        $('li').click(function (event) {
+            event.preventDefault();
+            $(this).parent().children().first().css('color', 'blue');
         })
+
     });
 </script>
 </body>
