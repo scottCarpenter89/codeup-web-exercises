@@ -83,8 +83,36 @@
         </li>
     </ul>
     <button type="button" id="highlight-btn">Highlight</button>
-
 </section>
+<section>
+    <div class="park-picker container">
+        <div class="row">
+            <p class="col-12">Can't decide on which park to go to first? Use our park picker to choose!</p>
+            <div class="card" style="width: 18rem;">
+                <img src="img/yellowstone.jpeg" class="card-img-top h-200" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/carlsbad-caverns.jpeg" class="card-img-top h-200" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="img/mesa-verde.jpeg" class="card-img-top h-200" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+        <button id="park-picker-btn" type="button">Pick my park!</button>
+    </div>
+</section>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <script src="/js/jquery-2.2.4.js"></script>
 <script>
     "use strict";
@@ -111,12 +139,21 @@
         // When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
         $('h3').click(function (event) {
             event.preventDefault();
-            $('.park-facts').children().css('font-weight', 'bold');
+            $(this).next().children().css('font-weight', 'bold');
         });
+        // When any list item is clicked, first li of the parent ul should have a font color of blue.
         $('li').click(function (event) {
             event.preventDefault();
             $(this).parent().children().first().css('color', 'blue');
-        })
+        });
+        // BONUS: Create 3 divs that each look like a picture frame. Each one should have a unique background image and a button underneath that swaps the image from the frame. Use the traversing functions of jQuery to accomplish this.
+        //
+        //     The rules are the following:
+        //
+        //     1. The left frame swaps to the right and takes the image from the frame in the center.
+        //     2. The center frame swaps randomly to either the left or right.
+        //     3. The right frame swaps to the left and takes the image from the frame in the center.
+
 
     });
 </script>
