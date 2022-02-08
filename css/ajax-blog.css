@@ -1,13 +1,36 @@
-* {
+:root {
+    --blues-bros: #457B9D;
+    --blog-body: #e63946;
+    --chill-blue: #A8DADC;
 
+}
+main {
+    background-color: var(--blog-body);
 }
 .card {
     padding: 0px;
 
 }
+
 .card-body {
     padding: 0px;
 }
+.card-title {
+    color: #eeeeee;
+}
+.card-subtitle {
+    color: #eeeeee;
+}
 .card-footer {
     width: 100%;
+}
+.post-header {
+    background-color: var(--blues-bros);
+}
+.card-body {
+    background-color: var(--chill-blue);
+}
+.footer {
+    background-color: var(--blues-bros);
+    color: #eeeeee;
 }

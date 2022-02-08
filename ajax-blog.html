@@ -26,13 +26,14 @@
             post.forEach(function (entry) {
                 $('#posts').append(`
                     <div class="card col-12 m-4 p-0" style="width: 18rem;">
-                      <div class="card-body">
+                    <div class="post-header p-3 border-bottom">
                         <h5 class="card-title">${entry.title}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${entry.date}</h6>
+                        <h6 class="card-subtitle mb-2 ">${entry.date}</h6>
+                    </div>
+                      <div class="card-body">
                         <p class="card-text">${entry.content}</p>
-
                       </div>
-                      <footer class="card-footer">
+                      <footer class="footer p-3">
                         ${addHash}${entry.categories.join(' #')}
                       </footer>
                     </div>
