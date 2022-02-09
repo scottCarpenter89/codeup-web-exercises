@@ -61,6 +61,9 @@ function addMarkerAndPopup (info, token, map) {
             .setLngLat(coordinates)
             .addTo(map)
             .setPopup(popup)
-        popup.addTo(map);
+        $(marker).on('click', function () {
+            popup.addTo(map);
+        });
+
     });
 }
