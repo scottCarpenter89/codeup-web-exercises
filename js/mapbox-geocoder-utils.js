@@ -52,3 +52,15 @@ function reverseGeocode(coordinates, token) {
             return data.features[0].place_name;
         });
 }
+
+function addMarkerAndPopup (info, token, map) {
+    geocode(info.address, token).then(function (coordinates) {
+        var popup = new mapboxgl.Popup()
+            .setHTML(info.popupHTML);
+        var marker = new mapboxgl.Marker()
+            .setLngLat(coordinates)
+            .addTo(map)
+            .setPopup(popup)
+        popup.addTo(map);
+    });
+}
