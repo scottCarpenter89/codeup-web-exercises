@@ -5,7 +5,7 @@
     <title>Mapbox API</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet'/>
-    <link rel="stylesheet" href="mapbox_maps_api.css">
+    <link rel="stylesheet" href="css/mapbox_maps_api.css">
 </head>
 <body>
 <main>
@@ -13,8 +13,12 @@
 </main>
 <script src="/js/jquery-2.2.4.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-<script src="js/mapbox-geocoder-utils.js"></script>
+<!--Mapbox Geocoder-->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+<!--Mapbox Token-->
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     (function () {
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
@@ -25,7 +29,19 @@
             zoom: 9 // starting zoom
         });
 
-        geocode('200 N Elm St Tomball TX 77375', SCOTTIE_MAPBOX_API);
+        map.addControl(
+            new MapboxGeocoder({
+                accessToken: SCOTTIE_MAPBOX_API,
+                mapboxgl: mapboxgl
+            })
+        );
+
+        geocode('200 N Elm St. Tomball TX 77375', SCOTTIE_MAPBOX_API).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(20);
+        });
+
     })();
 </script>
 </body>
