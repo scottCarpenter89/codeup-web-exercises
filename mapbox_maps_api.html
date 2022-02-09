@@ -23,12 +23,30 @@
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     (function () {
+
+        // var tejasInfo = {
+        //     address: "200 N Elm St. Tomball, TX 77375",
+        //     popupHTML: `<p>Best BBQ and Chocolatier in Tomball</p>`
+        // };
+
+        var myFavRestaurants = [{
+            address: `6615 N Grand Parkway West, # 325, Spring, TX 77389`,
+            popupHTML: `<p>Bloofin Sushi: Sushi Noms at Bargin Prices</p>`
+        }, {
+            address: "200 N Elm St. Tomball, TX 77375",
+            popupHTML: `<p>Tejas Chocolate + BBQ: Best BBQ and Chocolatier in Tomball</p>`
+        }, {
+            address: `25701 Interstate Hwy 45 #12, Spring, TX 77380`,
+            popupHTML: `<p>Sitar Cuisine of India: Curry over for great lunch Specials`
+        }
+        ];
+
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: [-74.5, 40], // starting position [lng, lat]
-            zoom: 15 // starting zoom
+            center: [-95.5192, 30.1314], // starting position [lng, lat]
+            zoom: 12 // starting zoom
         });
 
         map.addControl(
@@ -38,21 +56,18 @@
             })
         );
 
-        geocode('200 N Elm St. Tomball TX 77375', SCOTTIE_MAPBOX_API).then(function (result) {
-            console.log(result);
-            map.setCenter(result);
-            // Can the zoom be changed programmatically after the initial map is drawn?
-            //     Yes, with the setZoom function
-            map.setZoom(15);
-        });
+        // geocode('200 N Elm St. Tomball TX 77375', SCOTTIE_MAPBOX_API).then(function (result) {
+        //     console.log(result);
+        //     map.setCenter(result);
+        //     // Can the zoom be changed programmatically after the initial map is drawn?
+        //     //     Yes, with the setZoom function
+        //     map.setZoom(15);
+        // });
 
-        var tejasInfo = {
-            address: "200 N Elm St. Tomball, TX 77375",
-            popupHTML: `<p>Best BBQ and Chocolatier in Tomball</p>`
-        };
 
-        addMarkerAndPopup(tejasInfo, SCOTTIE_MAPBOX_API, map);
-
+        // addMarkerAndPopup(tejasInfo, SCOTTIE_MAPBOX_API, map);
+        console.log(myFavRestaurants);
+        pinFavRestaurants(myFavRestaurants, map);
 
     })();
 </script>
