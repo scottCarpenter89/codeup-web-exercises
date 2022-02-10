@@ -29,14 +29,22 @@
 
 <!-- then other libraries -->
 <script src="https://kit.fontawesome.com/99fe95afd3.js" crossorigin="anonymous"></script>
-
+<script src="js/keys.js"></script>
 <!-- YOUR STUFF GETS IMPORTED/WRITTEN HERE -->
 <script>
     (function () {
         "use strict";
-        $.document.on('ready', function () {
-
+        const WEATHERMAP_APPID = SCOTT_WEATHERMAP_API;
+        const tomballLat = 30.097191
+        const tomballLon = -95.616203
+        $(document).on('ready', function () {
+            $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + SCOTT_WEATHERMAP_API + "&q=Tomball,+US", {
+            }).done(function (data) {
+                console.log(data);
+            });
         });
+
+
     })();
 </script>
 </body>
