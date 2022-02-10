@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox API</title>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet'/>
+<!--    <link rel="stylesheet"-->
+<!--          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"-->
+<!--          type="text/css">-->
     <link rel="stylesheet" href="css/mapbox_maps_api.css">
 </head>
 <body>
@@ -16,64 +19,65 @@
 </main>
 <script src="/js/jquery-2.2.4.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-<!--Mapbox Geocoder-->
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
-      type="text/css">
+<!--&lt;!&ndash;Mapbox Geocoder&ndash;&gt;-->
+<!--<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>-->
+
 <!--Mapbox Token-->
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     (function () {
 
-        var tejasInfo = {
-            address: "200 N Elm St. Tomball, TX 77375",
-            popupHTML: `<p>Best BBQ and Chocolatier in Tomball</p>`
-        };
-
-        var myFavRestaurants = [{
-            address: `6615 N Grand Parkway West, # 325, Spring, TX 77389`,
-            popupHTML: `<p>Bloofin Sushi: Sushi Noms at Bargin Prices</p>`
-        }, {
-            address: "200 N Elm St. Tomball, TX 77375",
-            popupHTML: `<p>Tejas Chocolate + BBQ: Best BBQ and Chocolatier in Tomball</p>`
-        }, {
-            address: `25701 Interstate Hwy 45 #12, Spring, TX 77380`,
-            popupHTML: `<p>Sitar Cuisine of India: Curry over for great lunch Specials`
-        }
-        ];
+        const startingCoor = [-95.5192, 30.1314];
 
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
+
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: [-95.5192, 30.1314], // starting position [lng, lat]
+            center: startingCoor, // starting position [lng, lat]
             zoom: 12 // starting zoom
         });
 
-        map.addControl(
-            new MapboxGeocoder({
-                accessToken: SCOTTIE_MAPBOX_API,
-                mapboxgl: mapboxgl
+        let marker;
+        $(document).ready(function () {
+            marker = new mapboxgl.Marker( {
+                draggable: true
             })
-        );
+                .setLngLat(startingCoor)
+                .addTo(map)
+marker.on('dragend', markerEnd)
+        });
 
-        // geocode('200 N Elm St. Tomball TX 77375', SCOTTIE_MAPBOX_API).then(function (result) {
-        //     console.log(result);
-        //     map.setCenter(result);
-        //     // Can the zoom be changed programmatically after the initial map is drawn?
-        //     //     Yes, with the setZoom function
-        //     map.setZoom(15);
-        // });
+        function markerEnd () {
+            const coordinates = marker.getLngLat();
+            console.log(coordinates);
+            coordinatePopup (coordinates);
 
 
-        addMarkerAndPopup(tejasInfo, SCOTTIE_MAPBOX_API, map);
+        }
 
-        $.ajax('data/mapbox.json').done(
+        function coordinatePopup (coordinates){
+const LngLatArray = [coordinates.lng, coordinates.lat];
+const popup = new mapboxgl.Popup({ closeOnClick: false })
+            .setLngLat(LngLatArray)
+    .setHTML('<p>' + coordinates.join(', ') + '</p>');
+marker.setPopup(popup);
+popup.addTo(map);
 
-        )
-        pinFavRestaurants(myFavRestaurants, map);
+        }
+        // map.addControl(
+        //     new MapboxGeocoder({
+        //         accessToken: SCOTTIE_MAPBOX_API,
+        //         mapboxgl: mapboxgl
+        //     })
+        // );
+
+
+        // $.ajax('data/mapbox.json').done(
+        //
+        // )
+
 
     })();
 </script>
