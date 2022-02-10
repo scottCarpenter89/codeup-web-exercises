@@ -1,0 +1,67 @@
+[
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Gracie Barra Jiu Jitsu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.55693089962006,
+          29.968942123821392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Pho Thanh Long"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.58097422122955,
+          30.000017571896027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Bloofin Sushi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.52109122276306,
+          30.08857191149566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Tejas Chocolate + BBQ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.61462387442589,
+          30.09892207170853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Sitar Cuisine of India"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.44588476419449,
+          30.13565870665036
+        ]
+      }
+    }
+  ]

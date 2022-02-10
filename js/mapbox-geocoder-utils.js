@@ -27,14 +27,15 @@ function reverseGeocode(coordinates, token) {
 
 function addMarkerAndPopup (info, token, map) {
     geocode(info.address, token).then(function (coordinates) {
-        var popup = new mapboxgl.Popup()
-            .setHTML(info.popupHTML);
         var marker = new mapboxgl.Marker()
             .setLngLat(coordinates)
             .addTo(map)
             .setPopup(popup)
+        var popup = new mapboxgl.Popup()
+            .setHTML(info.popupHTML);
         $(marker).on('click', function () {
             popup.addTo(map);
+
         });
     });
 }

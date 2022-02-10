@@ -10,6 +10,9 @@
 <body>
 <main>
     <div id='map' style='width: 1120px; height: 600px;'></div>
+    <div>
+        <button type="button" id="save-pin">Save Pin</button>
+    </div>
 </main>
 <script src="/js/jquery-2.2.4.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
@@ -24,10 +27,10 @@
 <script>
     (function () {
 
-        // var tejasInfo = {
-        //     address: "200 N Elm St. Tomball, TX 77375",
-        //     popupHTML: `<p>Best BBQ and Chocolatier in Tomball</p>`
-        // };
+        var tejasInfo = {
+            address: "200 N Elm St. Tomball, TX 77375",
+            popupHTML: `<p>Best BBQ and Chocolatier in Tomball</p>`
+        };
 
         var myFavRestaurants = [{
             address: `6615 N Grand Parkway West, # 325, Spring, TX 77389`,
@@ -65,8 +68,11 @@
         // });
 
 
-        // addMarkerAndPopup(tejasInfo, SCOTTIE_MAPBOX_API, map);
-        console.log(myFavRestaurants);
+        addMarkerAndPopup(tejasInfo, SCOTTIE_MAPBOX_API, map);
+
+        $.ajax('data/mapbox.json').done(
+
+        )
         pinFavRestaurants(myFavRestaurants, map);
 
     })();
