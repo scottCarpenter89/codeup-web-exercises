@@ -1,3 +1,5 @@
 (function () {
+function citySearch (searchQuery) {
 
+}
 }) ();
