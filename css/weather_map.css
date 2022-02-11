@@ -1,0 +1,19 @@
+#nav-bar-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#city {
+    color: white;
+    list-style-type: none;
+    justify-content: flex-end;
+}
+
+.forecast-title {
+    padding: 2em;
+}
+
+#forecast-grid {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -11,12 +11,104 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <!-- YOUR EXTERNAL AND EMBEDDED STYLESHEETS GO HERE -->
-
+    <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
 
 <!--html body goes here-->
+<div class="container-fluid" style="padding: 0px;">
+        <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary col-12">
+        <div id="nav-bar-list">
+        <div class="navbar-brand">Weather App</div>
+        <div id="city" class="form-inline">Current City: </div>
+        </div>
+    </nav>
+</div>
+</div>
+<div class="forecast-title">
+    <h3>Your Daily Forecast</h3>
+</div>
 
+<div class="forecast-container container-fluid">
+    <div class="row" id="forecast-grid">
+        <div class="card col-2" id="day-array">
+            <div class="card-header" id="week-day">
+                Today
+            </div>
+            <!--May turn into nav bar to expand w/ larger images-->
+            <div class="card-body" id="forecast-info">
+                <p class="card-text" id="temp">High and low temp here</p>
+                <div id="overall-forecast">Icon image and brief description here</div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="windspeed">Wind speed here</li>
+                <li class="list-group-item" id="humdity">Humidity here</li>
+                <li class="list-group-item" id="pressure">Pressure here</li>
+            </ul>
+        </div>
+        <div class="card col-2" id="day-array">
+            <div class="card-header" id="week-day">
+                Today
+            </div>
+            <!--May turn into nav bar to expand w/ larger images-->
+            <div class="card-body" id="forecast-info">
+                <p class="card-text" id="temp">High and low temp here</p>
+                <div id="overall-forecast">Icon image and brief description here</div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="windspeed">Wind speed here</li>
+                <li class="list-group-item" id="humdity">Humidity here</li>
+                <li class="list-group-item" id="pressure">Pressure here</li>
+            </ul>
+        </div>
+        <div class="card col-2" id="day-array">
+            <div class="card-header" id="week-day">
+                Today
+            </div>
+            <!--May turn into nav bar to expand w/ larger images-->
+            <div class="card-body" id="forecast-info">
+                <p class="card-text" id="temp">High and low temp here</p>
+                <div id="overall-forecast">Icon image and brief description here</div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="windspeed">Wind speed here</li>
+                <li class="list-group-item" id="humdity">Humidity here</li>
+                <li class="list-group-item" id="pressure">Pressure here</li>
+            </ul>
+        </div>
+        <div class="card col-2" id="day-array">
+            <div class="card-header" id="week-day">
+                Today
+            </div>
+            <!--May turn into nav bar to expand w/ larger images-->
+            <div class="card-body" id="forecast-info">
+                <p class="card-text" id="temp">High and low temp here</p>
+                <div id="overall-forecast">Icon image and brief description here</div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="windspeed">Wind speed here</li>
+                <li class="list-group-item" id="humdity">Humidity here</li>
+                <li class="list-group-item" id="pressure">Pressure here</li>
+            </ul>
+        </div>
+        <div class="card col-2" id="day-array">
+            <div class="card-header" id="week-day">
+                Today
+            </div>
+            <!--May turn into nav bar to expand w/ larger images-->
+            <div class="card-body" id="forecast-info">
+                <p class="card-text" id="temp">High and low temp here</p>
+                <div id="overall-forecast">Icon image and brief description here</div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="windspeed">Wind speed here</li>
+                <li class="list-group-item" id="humdity">Humidity here</li>
+                <li class="list-group-item" id="pressure">Pressure here</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <!--from here down should be js imports-->
 <!-- jquery usually first always -->
@@ -38,8 +130,7 @@
         const tomballLat = 30.097191
         const tomballLon = -95.616203
         $(document).on('ready', function () {
-            $.get("http://api.openweathermap.org/data/2.5/weather?APPID=" + SCOTT_WEATHERMAP_API + "&q=Tomball,+US", {
-            }).done(function (data) {
+            $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${tomballLat}&lon=${tomballLon}&appid=${SCOTT_WEATHERMAP_API}`, {}).done(function (data) {
                 console.log(data);
             });
         });
