@@ -151,7 +151,8 @@
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [tomballLon, tomballLat],// starting position [lng, lat]
-            zoom: optimalZoom // starting zoom
+            zoom: optimalZoom, // starting zoom
+            pitch: 45,
         });
 
         function onMoveEnd() {
