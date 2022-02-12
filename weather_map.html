@@ -144,7 +144,7 @@
         const tomballLat = 30.097191
         const tomballLon = -95.616203
         const optimalZoom = 14;
-        let marker = STARTING_COORDS;
+
 
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
         const map = new mapboxgl.Map({
@@ -223,6 +223,15 @@
                 reverseGeocode: true
             })
         );
+
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true,
+            showUserLocation: true,
+            showUserHeading: true
+        }));
 
         $(document).on('ready', function () {
             let marker = new mapboxgl.Marker({
