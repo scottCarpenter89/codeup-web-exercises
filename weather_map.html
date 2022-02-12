@@ -46,7 +46,6 @@
             <div class="card-header" id="week-day0">
                 Today
             </div>
-
             <div class="card-body" id="forecast-info0">
                 <p class="card-text" id="temp0">High and low temp here</p>
                 <div id="overall-forecast0">Icon image and brief description here</div>
@@ -59,7 +58,7 @@
         </div>
         <div class="card col-2" id="day-array1">
             <div class="card-header" id="week-day1">
-                Tomorrow [daily[1].dt]
+                Tomorrow
             </div>
             <!--May turn into nav bar to expand w/ larger images-->
             <div class="card-body" id="forecast-info1">
@@ -132,6 +131,7 @@
 <!-- then other libraries -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 <script src="https://kit.fontawesome.com/99fe95afd3.js" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/weather-map-mapbox.js"></script>
@@ -144,8 +144,9 @@
         const tomballLat = 30.097191
         const tomballLon = -95.616203
         const optimalZoom = 14;
+        // let date = new Date(unix_timestamp * 1000);
 
-
+/*Mapbox Map Initiator */
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
         const map = new mapboxgl.Map({
             container: 'map', // container ID
@@ -163,7 +164,23 @@
             makePopupForCoords(coords);
         }
 
-        map.on('moveend', onMoveEnd);
+        map.on('moveEnd', onMoveEnd);
+
+
+        $(document).on('ready', function () {
+            let marker = new mapboxgl.Marker({
+                draggable: true})
+                .setLngLat(STARTING_COORDS)
+                .addTo(map);
+            marker.on('dragend', endOfMarkerDrag);
+            $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=29.4241&lon=-98.4936&exclude=hourly,minutely&appid=${SCOTT_WEATHERMAP_API}&units=imperial`)
+                .done(function (data) {
+                    console.log(data);
+                    $('#week-day2').html(`${new Date(data.daily[2].dt * 1000).toString().substr(0, 15)}`);
+                    $('#week-day3').html(`${new Date(data.daily[3].dt * 1000).toString().substr(0, 15)}`)
+                    $('#week-day4').html(`${new Date(data.daily[4].dt * 1000).toString().substr(0, 15)}`)
+                });
+        });
 
         const coordinatesGeocoder = function (query) {
 // Match anything which looks like
@@ -211,6 +228,7 @@
 
             return geocodes;
         };
+
         // initializes geocoder and allows you to control the mapbox geocoder
         map.addControl(
             new MapboxGeocoder({
@@ -230,16 +248,21 @@
             },
             trackUserLocation: true,
             showUserLocation: true,
-            showUserHeading: true
+            showUserHeading: true,
         }));
 
-        $(document).on('ready', function () {
-            let marker = new mapboxgl.Marker({
-                draggable: true
-            }).setLngLat(STARTING_COORDS)
-                .addTo(map);
-            marker.on('dragend', endOfMarkerDrag);
-        });
+        function geocode(search, token) {
+            var baseUrl = 'https://api.mapbox.com';
+            var endPoint = '/geocoding/v5/mapbox.places/';
+            return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+                .then(function(res) {
+                    return res.json();
+                    // to get all the data from the request, comment out the following three lines...
+                }).then(function(data) {
+                    return data.features[0].center;
+                });
+        }
+
 
         function endOfMarkerDrag() {
             // grab marker coords wherever it was dropped
@@ -249,7 +272,6 @@
 
             // make a popup for the coords and attach it to the marker
             makePopupForCoords(coords);
-
         }
 
         function makePopupForCoords(coords) {
@@ -286,7 +308,6 @@
                     $(".card-body").html(html);
                 });
         }
-        map.on('moveEnd', onMoveEnd);
 
 
     })();
