@@ -27,6 +27,9 @@ nav {
     display: flex;
     justify-content: space-evenly;
 }
+.forecast-container {
+    margin: 1em;
+}
 .card {
     padding: 0;
 }
