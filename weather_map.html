@@ -73,7 +73,7 @@
         </div>
         <div class="card col-2" id="day-array2">
             <div class="card-header" id="week-day2">
-                [daily[2].dt]
+
             </div>
             <!--May turn into nav bar to expand w/ larger images-->
             <div class="card-body" id="forecast-info2">
@@ -88,7 +88,7 @@
         </div>
         <div class="card col-2" id="day-array3">
             <div class="card-header" id="week-day3">
-                [daily[3].dt]
+
             </div>
             <!--May turn into nav bar to expand w/ larger images-->
             <div class="card-body" id="forecast-info3">
@@ -103,7 +103,7 @@
         </div>
         <div class="card col-2" id="day-array4">
             <div class="card-header" id="week-day4">
-                [daily[4].dt]
+
             </div>
             <!--May turn into nav bar to expand w/ larger images-->
             <div class="card-body" id="forecast-info4">
@@ -138,50 +138,36 @@
 <script src="js/weather-map-forecast.js"></script>
 <!-- YOUR STUFF GETS IMPORTED/WRITTEN HERE -->
 <script>
-    (function () {
+    (function() {
         "use strict";
-        const STARTING_COORDS = [-95.616203, 30.097191];
-        const tomballLat = 30.097191
-        const tomballLon = -95.616203
-        const optimalZoom = 14;
-        // let date = new Date(unix_timestamp * 1000);
+        var STARTING_COORDS = [-98.4916, 29.4252];
+        var OPTIMAL_ZOOM_LEVEL = 15;
 
-/*Mapbox Map Initiator */
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
-        const map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v11', // style URL
-            center: [tomballLon, tomballLat],// starting position [lng, lat]
-            zoom: optimalZoom, // starting zoom
-            pitch: 45,
+
+        // hook up mapbox js with the map div
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: OPTIMAL_ZOOM_LEVEL,
+            center: STARTING_COORDS
         });
+        let marker;
+
 
         function onMoveEnd() {
-            let coords = map.getCenter();
+            var coords = map.getCenter();
             // console.log(coords);
             marker.setLngLat(coords);
-            console.log(coords)
             makePopupForCoords(coords);
         }
 
-        map.on('moveEnd', onMoveEnd);
+        map.on('moveend', onMoveEnd);
 
-
-        $(document).on('ready', function () {
-            let marker = new mapboxgl.Marker({
-                draggable: true})
-                .setLngLat(STARTING_COORDS)
-                .addTo(map);
-            marker.on('dragend', endOfMarkerDrag);
-            $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=29.4241&lon=-98.4936&exclude=hourly,minutely&appid=${SCOTT_WEATHERMAP_API}&units=imperial`)
-                .done(function (data) {
-                    console.log(data);
-                    $('#week-day2').html(`${new Date(data.daily[2].dt * 1000).toString().substr(0, 15)}`);
-                    $('#week-day3').html(`${new Date(data.daily[3].dt * 1000).toString().substr(0, 15)}`)
-                    $('#week-day4').html(`${new Date(data.daily[4].dt * 1000).toString().substr(0, 15)}`)
-                });
-        });
-
+        /* Given a query in the form "lng, lat" or "lat, lng"
+* returns the matching geographic coordinate(s)
+* as search results in carmen geojson format,
+* https://github.com/mapbox/carmen/blob/master/carmen-geojson.md */
         const coordinatesGeocoder = function (query) {
 // Match anything which looks like
 // decimal degrees coordinate pair.
@@ -229,12 +215,11 @@
             return geocodes;
         };
 
-        // initializes geocoder and allows you to control the mapbox geocoder
         map.addControl(
             new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
                 localGeocoder: coordinatesGeocoder,
-                zoom: optimalZoom,
+                zoom: OPTIMAL_ZOOM_LEVEL,
                 placeholder: 'Search your area',
                 mapboxgl: mapboxgl,
                 marker: false,
@@ -242,36 +227,26 @@
             })
         );
 
-        map.addControl(new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            trackUserLocation: true,
-            showUserLocation: true,
-            showUserHeading: true,
-        }));
+        $(document).ready(function() {
+            // Create a new marker.
+            marker = new mapboxgl.Marker({
+                draggable: true
+            }).setLngLat(STARTING_COORDS)
+                .addTo(map);
 
-        function geocode(search, token) {
-            var baseUrl = 'https://api.mapbox.com';
-            var endPoint = '/geocoding/v5/mapbox.places/';
-            return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-                .then(function(res) {
-                    return res.json();
-                    // to get all the data from the request, comment out the following three lines...
-                }).then(function(data) {
-                    return data.features[0].center;
-                });
-        }
+            marker.on('dragend', endOfMarkerDrag);
 
+        });
 
         function endOfMarkerDrag() {
             // grab marker coords wherever it was dropped
-            const coords = marker.setLngLat();
+            const coords = marker.getLngLat();
 
             // console.log(coords);
 
             // make a popup for the coords and attach it to the marker
             makePopupForCoords(coords);
+
         }
 
         function makePopupForCoords(coords) {
@@ -299,18 +274,18 @@
                     var todaysHiTemp = data.daily[0].temp.max;
                     var tomorrowsHiTemp = data.daily[1].temp.max;
                     var html = `
-                    <div class="col-12">
-                        <p>Today's high is ${todaysHiTemp}</p>
-                        <p>Tomorrow's high is ${tomorrowsHiTemp}</p>
-                    </div>
-                    `;
+<div class="col-12">
+    <p>Today's high is ${todaysHiTemp}</p>
+    <p>Tomorrow's high is ${tomorrowsHiTemp}</p>
+</div>
+`;
 
-                    $(".card-body").html(html);
+                    $("#temp0").html(html);
+
                 });
         }
-
-
     })();
+
 </script>
 </body>
 </html>

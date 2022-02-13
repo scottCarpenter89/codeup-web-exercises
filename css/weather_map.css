@@ -36,4 +36,9 @@ nav {
 .card-header {
     background-color: #8D86C9;
     color: #eeeeee;
+    font-weight: bold;
 }
+
+$('#week-day2').html(`${new Date(data.daily[2].dt * 1000).toString().substr(0, 15)}`);
+$('#week-day3').html(`${new Date(data.daily[3].dt * 1000).toString().substr(0, 15)}`);
+$('#week-day4').html(`${new Date(data.daily[4].dt * 1000).toString().substr(0, 15)}`);
