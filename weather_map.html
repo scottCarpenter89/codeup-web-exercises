@@ -44,80 +44,8 @@
 </div>
 <div class="forecast-container container-fluid">
     <div class="row" id="forecast-grid">
-        <div class="card col-2" id="day-array0">
-            <div class="card-header" id="week-day0">
-                Today
-            </div>
-            <div class="card-body" id="forecast-info0">
-                <p class="card-text" id="temp0">High and low temp here</p>
-                <div id="overall-forecast0">Icon image and brief description here</div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="windspeed0">Wind speed here</li>
-                <li class="list-group-item" id="humdity0">Humidity here</li>
-                <li class="list-group-item" id="pressure0">Pressure here</li>
-            </ul>
-        </div>
-        <div class="card col-2" id="day-array1">
-            <div class="card-header" id="week-day1">
-                Tomorrow
-            </div>
-            <!--May turn into nav bar to expand w/ larger images-->
-            <div class="card-body" id="forecast-info1">
-                <p class="card-text" id="temp1">High and low temp here</p>
-                <div id="overall-forecast1">Icon image and brief description here</div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="windspeed1">Wind speed here</li>
-                <li class="list-group-item" id="humdity1">Humidity here</li>
-                <li class="list-group-item" id="pressure1">Pressure here</li>
-            </ul>
-        </div>
-        <div class="card col-2" id="day-array2">
-            <div class="card-header" id="week-day2">
 
-            </div>
-            <!--May turn into nav bar to expand w/ larger images-->
-            <div class="card-body" id="forecast-info2">
-                <p class="card-text" id="temp2">High and low temp here</p>
-                <div id="overall-forecast2">Icon image and brief description here</div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="windspeed2">Wind speed here</li>
-                <li class="list-group-item" id="humdity2">Humidity here</li>
-                <li class="list-group-item" id="pressure2">Pressure here</li>
-            </ul>
-        </div>
-        <div class="card col-2" id="day-array3">
-            <div class="card-header" id="week-day3">
 
-            </div>
-            <!--May turn into nav bar to expand w/ larger images-->
-            <div class="card-body" id="forecast-info3">
-                <p class="card-text" id="temp3">High and low temp here</p>
-                <div id="overall-forecast3">Icon image and brief description here</div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="windspeed3">Wind speed here</li>
-                <li class="list-group-item" id="humdity3">Humidity here</li>
-                <li class="list-group-item" id="pressure3">Pressure here</li>
-            </ul>
-        </div>
-        <div class="card col-2" id="day-array4">
-            <div class="card-header" id="week-day4">
-
-            </div>
-            <!--May turn into nav bar to expand w/ larger images-->
-            <div class="card-body" id="forecast-info4">
-                <p class="card-text" id="temp4">High and low temp here</p>
-                <div id="overall-forecast4">Icon image and brief description here</div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" id="windspeed4">Wind speed here</li>
-                <li class="list-group-item" id="humdity4">Humidity here</li>
-                <li class="list-group-item" id="pressure4">Pressure here</li>
-            </ul>
-        </div>
     </div>
 </div>
 
@@ -140,6 +68,24 @@
 <script src="js/weather-map-forecast.js"></script>
 <!-- YOUR STUFF GETS IMPORTED/WRITTEN HERE -->
 <script>
+    function createDailyForecastCard(dailyForecastData) {
+        let html = `<div class="card col-2">
+            <div class="card-header">
+                Today
+            </div>
+            <div class="card-body">
+                <p class="card-text">${dailyForecastData.temp.max}&deg; F / ${dailyForecastData.temp.min}&deg; F</p>
+                <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Wind speed here</li>
+                <li class="list-group-item">Humidity here</li>
+                <li class="list-group-item">Pressure here</li>
+            </ul>
+        </div>`;
+        return html;
+    }
+
     (function () {
         "use strict";
         var STARTING_COORDS = [-98.4916, 29.4252];
@@ -283,19 +229,24 @@
                     console.log(data);
                     // output 5-day forecast to wherever in our page we want it
                     // let degrees = &#xb0;
-                    let todaysForecast = makeForecastIcons(data.daily[0].weather[0].main);
-                    console.log(todaysForecast);
-                    var todaysHi = Number.parseInt(data.daily[0].temp.max);
-                    var todaysLow = Number.parseInt(data.daily[0].temp.min);
-                    var html = `
-<div class="col-12">
-    <p>${todaysHi} F / ${todaysLow} F</p>
-    <div>todaysForecast</div>
-
-</div>
-`;
-
-                    $("#temp0").html(html);
+                    $('#forecast-grid').html('');
+                    for (let i = 0; i < 5; i++) {
+                        const html = createDailyForecastCard(data.daily[i]);
+                        $('#forecast-grid').append(html);
+                    }
+//                     let todaysForecast = makeForecastIcons(data.daily[0].weather[0].main);
+//                     console.log(todaysForecast);
+//                     var todaysHi = Number.parseInt(data.daily[0].temp.max);
+//                     var todaysLow = Number.parseInt(data.daily[0].temp.min);
+//                     var html = `
+// <div class="col-12">
+//     <p>${todaysHi} F / ${todaysLow} F</p>
+//     <div>todaysForecast</div>
+//
+// </div>
+// `;
+//
+//                     $("#temp0").html(html);
 
                 });
         }
