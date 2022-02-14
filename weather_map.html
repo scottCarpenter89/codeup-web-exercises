@@ -199,14 +199,14 @@
         function createDailyForecastCard(dailyForecastData) {
             let html = `<div class="card col-2">
             <div class="card-header">
-                Today
+                ${new Date(dailyForecastData.dt * 1000).toString().substr(0, 15)}
             </div>
             <div class="card-body">
-                <p class="card-text">${dailyForecastData.temp.max}&deg; F / ${dailyForecastData.temp.min}&deg; F</p>
+                <p class="card-text">${Number.parseInt(dailyForecastData.temp.max)}&deg; F / ${Number.parseInt(dailyForecastData.temp.min)}&deg; F</p>
                 <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Wind speed: ${dailyForecastData.wind_speed} mph</li>
+                <li class="list-group-item">Wind speed: ${Number.parseInt(dailyForecastData.wind_speed)} mph</li>
                 <li class="list-group-item">Humidity: ${dailyForecastData.humidity}</li>
                 <li class="list-group-item">Pressure: ${dailyForecastData.pressure}</li>
             </ul>
