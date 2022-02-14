@@ -89,14 +89,14 @@
         let marker;
 
 
-        function onMoveEnd() {
+        function onClick() {
             var coords = map.getCenter();
             // console.log(coords);
             marker.setLngLat(coords);
             makePopupForCoords(coords);
         }
 
-        map.on('moveend', onMoveEnd);
+        map.on('click', onClick);
 
         /* Given a query in the form "lng, lat" or "lat, lng"
 * returns the matching geographic coordinate(s)
