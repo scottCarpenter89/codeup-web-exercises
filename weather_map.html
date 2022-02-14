@@ -186,13 +186,20 @@
         function makePopupForCoords(coords) {
             // coords is an object of coordinates. lets make an array of the coordinates
             const coordArray = [coords.lng, coords.lat];
-            const popup = new mapboxgl.Popup({closeOnClick: false})
-                .setLngLat(coordArray)
-                .setHTML('<p>' + coordArray.join(', ') + '</p>');
-            // .addTo(map);
-            marker.setPopup(popup);
-            popup.addTo(map);
-
+            $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lng}&exclude=hourly,minutely&appid=${SCOTT_WEATHERMAP_API}&units=imperial`)
+                .done(function (data) {
+                    const popup = new mapboxgl.Popup({closeOnClick: false})
+                        .setLngLat(coordArray)
+                        .setHTML(`
+<div>
+<div>${Number.parseInt(data.daily[0].temp.max)}&deg; F / ${Number.parseInt(data.daily[0].temp.min)}&deg; F</div>
+<img src="http://openweathermap.org/img/w/${data.daily[0].weather[0].icon}.png">
+</div>
+`);
+                    // .addTo(map);
+                    marker.setPopup(popup);
+                    popup.addTo(map);
+                });
             doForecastingStuffForCoords(coordArray);
         }
 
