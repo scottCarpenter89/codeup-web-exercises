@@ -59,37 +59,23 @@
         crossorigin="anonymous"></script>
 
 <!-- then other libraries -->
+<script src="js/weather-map-mapbox.js"></script>
+<script src="js/weather-map-forecast.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
 <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 <script src="https://kit.fontawesome.com/6375fe5bd9.js" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
-<script src="js/weather-map-mapbox.js"></script>
-<script src="js/weather-map-forecast.js"></script>
+
 <!-- YOUR STUFF GETS IMPORTED/WRITTEN HERE -->
 <script>
-    function createDailyForecastCard(dailyForecastData) {
-        let html = `<div class="card col-2">
-            <div class="card-header">
-                Today
-            </div>
-            <div class="card-body">
-                <p class="card-text">${dailyForecastData.temp.max}&deg; F / ${dailyForecastData.temp.min}&deg; F</p>
-                <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Wind speed: ${dailyForecastData.wind_speed} mph</li>
-                <li class="list-group-item">Humidity: ${dailyForecastData.humidity}</li>
-                <li class="list-group-item">Pressure: ${dailyForecastData.pressure}</li>
-            </ul>
-        </div>`;
-        return html;
-    }
+
 
     (function () {
         "use strict";
         var STARTING_COORDS = [-98.4916, 29.4252];
         var OPTIMAL_ZOOM_LEVEL = 15;
+        doForecastingStuffForCoords(STARTING_COORDS);
 
         mapboxgl.accessToken = SCOTTIE_MAPBOX_API;
 
@@ -208,10 +194,25 @@
             popup.addTo(map);
 
             doForecastingStuffForCoords(coordArray);
-
         }
 
-
+        function createDailyForecastCard(dailyForecastData) {
+            let html = `<div class="card col-2">
+            <div class="card-header">
+                Today
+            </div>
+            <div class="card-body">
+                <p class="card-text">${dailyForecastData.temp.max}&deg; F / ${dailyForecastData.temp.min}&deg; F</p>
+                <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Wind speed: ${dailyForecastData.wind_speed} mph</li>
+                <li class="list-group-item">Humidity: ${dailyForecastData.humidity}</li>
+                <li class="list-group-item">Pressure: ${dailyForecastData.pressure}</li>
+            </ul>
+        </div>`;
+            return html;
+        }
 
         // note: coords is an array of [lng, lat]
         function doForecastingStuffForCoords(coords) {
@@ -227,22 +228,9 @@
                         const html = createDailyForecastCard(data.daily[i]);
                         $('#forecast-grid').append(html);
                     }
-//                     let todaysForecast = makeForecastIcons(data.daily[0].weather[0].main);
-//                     console.log(todaysForecast);
-//                     var todaysHi = Number.parseInt(data.daily[0].temp.max);
-//                     var todaysLow = Number.parseInt(data.daily[0].temp.min);
-//                     var html = `
-// <div class="col-12">
-//     <p>${todaysHi} F / ${todaysLow} F</p>
-//     <div>todaysForecast</div>
-//
-// </div>
-// `;
-//
-//                     $("#temp0").html(html);
-
                 });
         }
+
     })();
 
 </script>
