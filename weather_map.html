@@ -78,9 +78,9 @@
                 <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Wind speed here</li>
-                <li class="list-group-item">Humidity here</li>
-                <li class="list-group-item">Pressure here</li>
+                <li class="list-group-item">Wind speed: ${dailyForecastData.wind_speed} mph</li>
+                <li class="list-group-item">Humidity: ${dailyForecastData.humidity}</li>
+                <li class="list-group-item">Pressure: ${dailyForecastData.pressure}</li>
             </ul>
         </div>`;
         return html;
@@ -208,17 +208,10 @@
             popup.addTo(map);
 
             doForecastingStuffForCoords(coordArray);
-            makeForecastIcons(coordArray);
+
         }
 
-        function makeForecastIcons(coords) {
-            switch (coords) {
-                case 'Clear':
-                    return `<i className="fa-solid fa-sun"></i>`;
-                case 'Rainy':
-                    return `<i className="fa-solid fa-cloud-rain"></i>`;
-            }
-        }
+
 
         // note: coords is an array of [lng, lat]
         function doForecastingStuffForCoords(coords) {
