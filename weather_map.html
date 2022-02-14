@@ -3,7 +3,7 @@
 <head>
     <!--    meta includes setup for media queries-->
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Starter Template</title>
     <link rel="shortcut icon" href="favicon.ico">
     <!--    bootstrap first-->
@@ -40,7 +40,7 @@
 <div id="map"></div>
 <!--5-DAY FORECAST, NOTE: May turn into nav bar card to expand w/ larger images-->
 <div class="forecast-title">
-    <h3>Your Daily Forecast</h3>
+    <h2>Your Daily Forecast</h2>
 </div>
 <div class="forecast-container container-fluid">
     <div class="row" id="forecast-grid">
@@ -222,6 +222,7 @@
         </div>`;
             return html;
         }
+
 
         // note: coords is an array of [lng, lat]
         function doForecastingStuffForCoords(coords) {
