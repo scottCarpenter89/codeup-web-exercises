@@ -1,51 +1,74 @@
 :root {
     --elixir-color: #8D86C9;
-}
-nav {
-    background-color: var(--elixir-color);
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-}
-.navbar-brand {
-    padding: .5em;
-}
-#city {
-    color: white;
-    margin-right: .5em;
-}
-#map {
-    width: auto;
-    height: 500px;
-    margin: 1em;
-    border: 2px solid var(--elixir-color);
-    border-radius: 5px;
-}
-.forecast-title {
-    padding: 2em;
-    color: var(--elixir-color);
+
 }
 
-#forecast-grid {
-    display: flex;
-    justify-content: space-evenly;
-}
-.forecast-container {
-    margin: 1em;
-}
-.card {
-    padding: 0;
-}
-.card-header {
-    background-color: var(--elixir-color);
-    color: #eeeeee;
-    font-weight: bold;
+
+    nav {
+        background-color: var(--elixir-color);
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar-brand {
+        padding: .5em;
+    }
+
+    #city {
+        color: white;
+        margin-right: .5em;
+    }
+
+    #map {
+        width: auto;
+        height: 500px;
+        margin: 1em;
+        border: 2px solid var(--elixir-color);
+        border-radius: 5px;
+    }
+
+    .forecast-title {
+        padding: 2em;
+        color: var(--elixir-color);
+    }
+
+
+
+    .forecast-container {
+        margin: 1em;
+    }
+
+    .card {
+        padding: 0;
+    }
+
+    .card-header {
+        background-color: var(--elixir-color);
+        color: #eeeeee;
+        font-weight: bold;
+    }
+
+@media screen and (min-width:621px) {
+    #mobile-forecast {
+        display: none;
+    }
+    #forecast-grid {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 @media screen and (max-width:620px) {
-.card {
+#forecast-grid {
     display: none;
 }
-
+#mobile-forecast {
+    display: block;
+}
+.nav-link {
+    color: #eeeeee;
+}
 }

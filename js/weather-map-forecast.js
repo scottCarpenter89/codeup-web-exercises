@@ -1,12 +1,42 @@
 "use strict";
-// $(document).on('ready', function () {
-//     const STARTING_COORDS = [-95.616203, 30.097191];
-//     const tomballLat = 30.097191
-//     const tomballLon = -95.616203
-//     const optimalZoom = 15;
-//     // let searchQuery = $('#city-search').
-//     $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${tomballLat}&lon=${tomballLon}&appid=${SCOTT_WEATHERMAP_API}`, {}).done(function (data) {
-//         console.log(data);
-//     });
+$('#day0 a').on('click', function (event) {
+    event.preventDefault()
+    $(this).tab('show')
+    $('#day1 a').tab('hide')
+    $('#day2 a').tab('hide')
+    $('#day3 a').tab('hide')
+    $('#day4 a').tab('hide')
+});
+$('#day1 a').on('click', function (event) {
+    event.preventDefault()
+    $(this).tab('show')
+    $('#day0 a').tab('hide')
+    $('#day2 a').tab('hide')
+    $('#day3 a').tab('hide')
+    $('#day4 a').tab('hide')
+});
+$('#day2 a').on('click', function (event) {
+    event.preventDefault()
+    $(this).tab('show')
+    $('#day0 a').tab('hide')
+    $('#day1 a').tab('hide')
+    $('#day3 a').tab('hide')
+    $('#day4 a').tab('hide')
+});
+$('#day3 a').on('click', function (event) {
+    event.preventDefault()
+    $(this).tab('show')
+    $('#day0 a').tab('hide')
+    $('#day1 a').tab('hide')
+    $('#day2 a').tab('hide')
+    $('#day4 a').tab('hide')
 
-// });
+});
+$('#day4 a').on('click', function (event) {
+    event.preventDefault()
+    $(this).tab('show')
+    $('#day0 a').tab('hide')
+    $('#day1 a').tab('hide')
+    $('#day2 a').tab('hide')
+    $('#day3 a').tab('hide')
+})
