@@ -30,6 +30,7 @@
     </div>
 </div>
 <!--MAP SEARCH-->
+<main>
 <div id="map"></div>
 <!--5-DAY FORECAST, NOTE: May turn into nav bar card to expand w/ larger images-->
 <div class="forecast-title">
@@ -44,7 +45,7 @@
 <div class="mobile-forecast container-fluid" id="mobile-forecast">
     <div class="card text-center">
         <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs" id="daily-weather-list">
+            <ul class="nav nav-tabs card-header-tabs" id="daily-weather-list" role="tablist">
 
             </ul>
         </div>
@@ -55,6 +56,7 @@
         </div>
     </div>
 </div>
+</main>
 <!--from here down should be js imports-->
 <!-- jquery usually first always -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -232,15 +234,14 @@
 
         function createMobileNavTab(dailyForecastData, day) {
             let html = `<li class="nav-item" role="presentation">
-                    <a class="nav-link" id="navDay${day}" data-toggle="tab" href="#day${day}" role="tab" aria-controls="day${day}"
-                       aria-selected="false">${new Date(dailyForecastData.dt * 1000).toString().substr(0, 3)}</a>
+                    <a class="nav-link" id="nav-tab${day}" data-toggle="tab" href="#day${day}" role="tab" aria-controls="day${day}"
+                       aria-selected="true">${new Date(dailyForecastData.dt * 1000).toString().substr(0, 3)}</a>
                 </li>`;
             return html;
         }
 
         function createMobileNavBody(dailyForecastData, day) {
-           let html = `
-                <div className="tab-pane" id="day${day}" role="tabpanel" aria-labelledby="day${day}">
+            let html = `<div class="tab-pane fade show active" id="day${day}" role="tabpanel" aria-labelledby="nav-tab${day}">
                     <div class="card-body">
                 <p class="card-text" style="font-size: 14px">${Number.parseInt(dailyForecastData.temp.max)}&deg; F / ${Number.parseInt(dailyForecastData.temp.min)}&deg; F</p>
                 <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
@@ -264,18 +265,12 @@
                     // let degrees = &#xb0;
                     $('#forecast-grid').html('');
                     $('.nav-tabs').html('');
-                    $('.nav-item').html('');
                     $('#myTabContent').html('');
                     for (let i = 0; i < 5; i++) {
                         //non-mobile stuff
                         const cardHTML = createDailyForecastCard(data.daily[i]);
                         $('#forecast-grid').append(cardHTML);
-
-
                         // mobile stuff
-                        // $('.nav-tabs').append(createMobileNavBody(data.daily[i]));
-                        // $('.nav-tabs').append(navTabHTML);
-                        // const navTabHTML = createMobileNavTab(data.daily[i]);
                         const navTabHTML = createMobileNavTab(data.daily[i], i);
                         $('.nav-tabs').append(navTabHTML);
                         const navBodyHTML = createMobileNavBody(data.daily[i], i);

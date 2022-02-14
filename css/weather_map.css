@@ -2,8 +2,12 @@
     --elixir-color: #8D86C9;
 
 }
-
-
+body {
+    background-color: lightgrey;
+}
+    /*main {*/
+    /*    background-color: #DDDDDD;*/
+    /*}*/
     nav {
         background-color: var(--elixir-color);
     }
