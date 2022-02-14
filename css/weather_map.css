@@ -1,3 +1,4 @@
+
 nav {
     background-color: #8D86C9;
 }
@@ -37,6 +38,7 @@ nav {
     background-color: #8D86C9;
     color: #eeeeee;
     font-weight: bold;
+    
 }
 
 $('#week-day2').html(`${new Date(data.daily[2].dt * 1000).toString().substr(0, 15)}`);
