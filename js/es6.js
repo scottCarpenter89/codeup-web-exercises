@@ -47,10 +47,10 @@ const SCOTT_DATA = {
   email,
   languages
 }
-console.log(users);
+// console.log(users);
 // TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+let emails = [];
+let names = [];
 
 // TODO: rewrite the following using arrow functions
 users.forEach(function(user) {
@@ -59,7 +59,12 @@ users.forEach(function(user) {
 users.forEach(function(user) {
   return names.push(user.name);
 });
-
+const arrowFunction = userObj => {
+  emails.push(email);
+  names.push(name);
+  return {emails, names};
+}
+console.log(arrowFunction(users));
 // TODO: replace `var` with `let` in the following declaration
 var developers = [];
 users.forEach(function(user) {
