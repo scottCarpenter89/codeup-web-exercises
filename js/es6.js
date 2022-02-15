@@ -56,15 +56,31 @@ let names = [];
 users.forEach(function(user) {
   return emails.push(user.email);
 });
+
+const pushEmails = _ => {
+  emails.push(users.email);
+  return emails;
+}
+console.log(pushEmails());
+
 users.forEach(function(user) {
   return names.push(user.name);
 });
-const arrowFunction = userObj => {
-  emails.push(email);
-  names.push(name);
-  return {emails, names};
+
+const pushNames = _ => {
+  names.push(users.name);
+  return names;
 }
-console.log(arrowFunction(users));
+console.log(pushNames());
+
+// more concise way of doing it in one function
+  // const arrowFunction = userObj => {
+  //   emails.push(email);
+  //   names.push(name);
+  //   return {emails, names};
+  // }
+  // console.log(arrowFunction(users));
+
 // TODO: replace `var` with `let` in the following declaration
 var developers = [];
 users.forEach(function(user) {
