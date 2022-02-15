@@ -233,15 +233,23 @@
 
 
         function createMobileNavTab(dailyForecastData, day) {
+            let showLink = '';
+            if (day === 0) {
+                showLink = 'active';
+            }
             let html = `<li class="nav-item" role="presentation">
-                    <a class="nav-link" id="nav-tab${day}" data-toggle="tab" href="#day${day}" role="tab" aria-controls="day${day}"
+                    <a class="nav-link ${showLink}" id="nav-tab${day}" data-toggle="tab" href="#day${day}" role="tab" aria-controls="day${day}"
                        aria-selected="true">${new Date(dailyForecastData.dt * 1000).toString().substr(0, 3)}</a>
                 </li>`;
             return html;
         }
 
         function createMobileNavBody(dailyForecastData, day) {
-            let html = `<div class="tab-pane fade show active" id="day${day}" role="tabpanel" aria-labelledby="nav-tab${day}">
+            let showTab = '';
+            if (day === 0) {
+                showTab = 'show active';
+            }
+            let html = `<div class="tab-pane fade ${showTab}" id="day${day}" role="tabpanel" aria-labelledby="nav-tab${day}">
                     <div class="card-body">
                 <p class="card-text" style="font-size: 14px">${Number.parseInt(dailyForecastData.temp.max)}&deg; F / ${Number.parseInt(dailyForecastData.temp.min)}&deg; F</p>
                 <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
