@@ -37,3 +37,19 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+
+// TODO: Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
+let userLanguages = users.filter(function (user) {
+
+    return user.languages.length >= 3;
+});
+console.log(userLanguages);
+// TODO: Use .map to create an array of strings where each element is a user's email address
+
+// TODO: Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+
+// TODO: Use .reduce to get the longest email from the list of users.
+
+// TODO: Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+
+// TODO BONUS: Use .reduce to get the unique list of languages from the list of users.
