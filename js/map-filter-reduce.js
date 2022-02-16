@@ -55,11 +55,15 @@ let totalXP = users.reduce((experience, person) => {
 }, 0);
 
 function avgXP (totalXP) {
-    return totalXP / users.length;
+    let averageXP = totalXP / users.length;
+    return `The average amount of experience is ${averageXP} years`;
 }
 console.log(avgXP(totalXP));
 // TODO: Use .reduce to get the longest email from the list of users.
-
+let longestEmail = users.reduce((longestEmail, user) => {
+    return Math.max(longestEmail, user.email.length);
+}, 0);
+console.log(`The longest email length is ${longestEmail} characters`);
 // TODO: Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
 // TODO BONUS: Use .reduce to get the unique list of languages from the list of users.
