@@ -45,7 +45,7 @@ let userLanguages = users.filter(function (user) {
 });
 console.log(userLanguages);
 // TODO: Use .map to create an array of strings where each element is a user's email address
-let userEmails =  users.map(function (user) {
+let userEmails = users.map(function (user) {
     return user.email;
 });
 console.log(userEmails);
@@ -54,10 +54,11 @@ let totalXP = users.reduce((experience, person) => {
     return experience + person.yearsOfExperience;
 }, 0);
 
-function avgXP (totalXP) {
+function avgXP(totalXP) {
     let averageXP = totalXP / users.length;
     return `The average amount of experience is ${averageXP} years`;
 }
+
 console.log(avgXP(totalXP));
 // TODO: Use .reduce to get the longest email from the list of users.
 let longestEmail = users.reduce((longestEmail, user) => {
@@ -65,5 +66,16 @@ let longestEmail = users.reduce((longestEmail, user) => {
 }, 0);
 console.log(`The longest email length is ${longestEmail} characters`);
 // TODO: Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+let userNames = users.reduce((namesString, name) => {
+    let rawNames = namesString + ', ' + name.name;
+    return rawNames;
+}, 0);
 
+function trimString (rawString) {
+    let justTheNames = rawString.substr(3);
+    let instructorNamesString = `Your instructors are: ${justTheNames}.`;
+    return instructorNamesString;
+}
+
+console.log(trimString(userNames));
 // TODO BONUS: Use .reduce to get the unique list of languages from the list of users.
