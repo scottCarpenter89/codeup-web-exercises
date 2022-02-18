@@ -66,7 +66,6 @@ let longestEmail = userEmails.reduce((longestEmail, user) => {
         return user;
     }
   return longestEmail;
-    // return Math.max(longestEmail, user.email.length);
 });
 console.log(`The longest email length is ${longestEmail} characters`);
 
