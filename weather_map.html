@@ -198,14 +198,16 @@
                 .done(function (data) {
                     const popup = new mapboxgl.Popup({closeOnClick: false})
                         .setLngLat(coordArray)
-                        // language = html
+                        // language=html
                         .setHTML(`
-<div>
-<div>${new Date(data.daily[0].dt * 1000).toString().substr(0, 15)}</div>
-<div>${Number.parseInt(data.daily[0].temp.max)}&deg; F / ${Number.parseInt(data.daily[0].temp.min)}&deg; F</div>
-<img src="http://openweathermap.org/img/w/${data.daily[0].weather[0].icon}.png">
-</div>
-`);
+                            <div>
+                                <div>${new Date(data.daily[0].dt * 1000).toString().substr(0, 15)}</div>
+                                <div>${Number.parseInt(data.daily[0].temp.max)}&deg; F /
+                                    ${Number.parseInt(data.daily[0].temp.min)}&deg; F
+                                </div>
+                                <img src="http://openweathermap.org/img/w/${data.daily[0].weather[0].icon}.png">
+                            </div>
+                        `);
                     // .addTo(map);
                     marker.setPopup(popup);
                     popup.addTo(map);
@@ -227,15 +229,16 @@
                                 F / ${Number.parseInt(dailyForecastData.temp.min)}&deg; F</p>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <img class="condition-icon" src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'>
+                            <img class="condition-icon"
+                                 src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'>
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item" style="font-size: 14px">Wind speed:
                             ${Number.parseInt(dailyForecastData.wind_speed)} mph
                         </li>
-                        <li class="list-group-item" style="font-size: 14px">Humidity: ${dailyForecastData.humidity}</li>
-                        <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure}</li>
+                        <li class="list-group-item" style="font-size: 14px">Humidity: ${dailyForecastData.humidity}%</li>
+                        <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure} hPa</li>
                     </ul>
                 </div>`;
             return html;
@@ -266,8 +269,8 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item" style="font-size: 14px">Wind speed: ${Number.parseInt(dailyForecastData.wind_speed)} mph</li>
-                <li class="list-group-item" style="font-size: 14px">Humidity: ${dailyForecastData.humidity}</li>
-                <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure}</li>
+                <li class="list-group-item" style="font-size: 14px">Humidity: ${dailyForecastData.humidity}%</li>
+                <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure} hPa</li>
             </ul>
                 </div>`;
             return html;
