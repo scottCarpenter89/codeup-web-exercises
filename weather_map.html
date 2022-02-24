@@ -31,31 +31,31 @@
 </div>
 <!--MAP SEARCH-->
 <main>
-<div id="map"></div>
-<!--5-DAY FORECAST, NOTE: May turn into nav bar card to expand w/ larger images-->
-<div class="forecast-title">
-    <h2>Your Daily Forecast</h2>
-</div>
-<div class="forecast-container container-fluid">
-    <div class="row" id="forecast-grid">
-
-
+    <div id="map"></div>
+    <!--5-DAY FORECAST, NOTE: May turn into nav bar card to expand w/ larger images-->
+    <div class="forecast-title">
+        <h2>Your Daily Forecast</h2>
     </div>
-</div>
-<div class="mobile-forecast container-fluid" id="mobile-forecast">
-    <div class="card text-center">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs" id="daily-weather-list" role="tablist">
+    <div class="forecast-container container-fluid">
+        <div class="row" id="forecast-grid">
 
-            </ul>
+
         </div>
-        <div class="card-body container-fluid" id="mobile-card-container">
-            <div class="tab-content" id="myTabContent">
+    </div>
+    <div class="mobile-forecast container-fluid" id="mobile-forecast">
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="daily-weather-list" role="tablist">
 
+                </ul>
+            </div>
+            <div class="card-body container-fluid" id="mobile-card-container">
+                <div class="tab-content" id="myTabContent">
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 <!--from here down should be js imports-->
 <!-- jquery usually first always -->
@@ -198,6 +198,7 @@
                 .done(function (data) {
                     const popup = new mapboxgl.Popup({closeOnClick: false})
                         .setLngLat(coordArray)
+                        // language = html
                         .setHTML(`
 <div>
 <div>${new Date(data.daily[0].dt * 1000).toString().substr(0, 15)}</div>
@@ -214,20 +215,29 @@
 
         // would be cool to add wind direction in too
         function createDailyForecastCard(dailyForecastData) {
-            let html = `<div class="card col-2">
-            <div class="card-header" style="font-size: 14px">
-                ${new Date(dailyForecastData.dt * 1000).toString().substr(0, 15)}
-            </div>
-            <div class="card-body">
-                <p class="card-text" style="font-size: 14px">${Number.parseInt(dailyForecastData.temp.max)}&deg; F / ${Number.parseInt(dailyForecastData.temp.min)}&deg; F</p>
-                <div><img src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'></div>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item" style="font-size: 14px">Wind speed: ${Number.parseInt(dailyForecastData.wind_speed)} mph</li>
-                <li class="list-group-item" style="font-size: 14px">Humidity: ${dailyForecastData.humidity}</li>
-                <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure}</li>
-            </ul>
-        </div>`;
+            //language=html
+            let html = `
+                <div class="card col-2">
+                    <div class="card-header" style="font-size: 14px">
+                        ${new Date(dailyForecastData.dt * 1000).toString().substr(0, 15)}
+                    </div>
+                    <div class="card-body ">
+                        <div class="d-flex justify-content-center">
+                            <p class="card-text" style="font-size: 14px">${Number.parseInt(dailyForecastData.temp.max)}&deg;
+                                F / ${Number.parseInt(dailyForecastData.temp.min)}&deg; F</p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <img class="condition-icon" src='http://openweathermap.org/img/w/${dailyForecastData.weather[0].icon}.png'>
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="font-size: 14px">Wind speed:
+                            ${Number.parseInt(dailyForecastData.wind_speed)} mph
+                        </li>
+                        <li class="list-group-item" style="font-size: 14px">Humidity: ${dailyForecastData.humidity}</li>
+                        <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure}</li>
+                    </ul>
+                </div>`;
             return html;
         }
 
@@ -260,8 +270,9 @@
                 <li class="list-group-item" style="font-size: 14px">Pressure: ${dailyForecastData.pressure}</li>
             </ul>
                 </div>`;
-        return html;
+            return html;
         }
+
         // note: coords is an array of [lng, lat]
         function doForecastingStuffForCoords(coords) {
             var lng = coords[0];
