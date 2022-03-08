@@ -365,3 +365,73 @@ function sumOfSquares(a, b) {
 // console.log(convertLowHighToObject('-17, 57'));
 // console.log(convertLowHighToObject('80, 1000'));
 // console.log(convertLowHighToObject('\'raymonds house right now', '76\''));
+
+// const isDivisibleBy3 = n => n % 3 === 0;
+//
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//
+// console.log(numbers.filter(isDivisibleBy3));
+// console.log(numbers);
+
+// function countDuplicates(inputString) {
+//     const inputArray = inputString.split('');
+//     const countCharacters = inputArray.reduce((letterCount, letter) => {
+//         if (typeof letterCount[letter] === 'undefined') {
+//             letterCount[letter] = 1;
+//         } else {
+//             letterCount[letter] += 1;
+//         }
+//         return letterCount;
+//     }, {});
+//     return countCharacters;
+// }
+//
+// console.log(countDuplicates("adsjfdsfsfjsdjfhacabcsbajda"));
+
+// Write a function called makePerson. It takes 2 arguments: personName and age.
+//     personName must be at least 1 character long. age must be between 1 and 150.
+
+// If either of the parameters is invalid, output an appropriate message to the console and return FALSE.
+//     If both parameters are valid, return an object containing personName and age.
+//     E.g.,
+//     console.log(makePerson("Bob", 30)); // outputs {personName:"Bob", age:30}
+// console.log(makePerson("", 30));
+// // outputs:
+// Person name cannot be blank
+// false
+
+// make person function
+function makePerson(personName, age) {
+    let nameValid = characterChecker(personName);
+    let ageValid = ageBetween(age, 1, 150);
+    if (nameValid && ageValid) {
+        return {
+            personName,
+            age
+        }
+    } else {
+        console.log("Your input is invalid");
+        return false;
+    }
+}
+// age validator
+function ageBetween(age, min, max) {
+    if (min <= age && age <= max) {
+        return true;
+    }
+    return false;
+}
+// character validator
+function characterChecker(string) {
+    if (string === undefined || typeof string === 'number' || string === '') {
+        return false;
+    }
+    return true;
+}
+
+
+
+
+console.log(makePerson("Scott", 32));
+console.log(makePerson("Sarah", 30));
+
